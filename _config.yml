@@ -4,10 +4,10 @@
 title: Kuan-Wei Lu
 description: Stanley's personal website
 keywords: Stanley,github,python
-baseurl:  /Jalpc # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
-url: https://jarrekk.github.io/Jalpc  # url should be 'http://<github_username>.github.io/homepage' as before
+baseurl:  /stanleyluuuu # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
+url: https://stanleyluuuu.github.io/stanleyluuuu  # url should be 'http://<github_username>.github.io/homepage' as before
 # url: http://127.0.0.1:4000
-img_path: /Jalpc/static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
+img_path: /stanleyluuuu/static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
 
 # author -- index page "about me" section
 author:  # change following line to your infomation.
@@ -18,9 +18,9 @@ author:  # change following line to your infomation.
   github_username: stanleyluuuu  # Leave blank if you don't have now
   linkedin_id:  # Leave blank if you don't have now
   facebook_username: Stanley Lu  # Leave blank if you don't have now
-  twitter_username:   # Leave blank if you don't have now
+  # twitter_username:   # Leave blank if you don't have now
   email: stanley860920@gmail.com  # Leave blank if you don't have now
-  cv:  # An online CV can be printed as PDF, leave blank if you don't have now
+  # cv:  # An online CV can be printed as PDF, leave blank if you don't have now
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
     - name: icon-apple
@@ -31,13 +31,13 @@ author:  # change following line to your infomation.
   desc: I am a first-year master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on deep reinforcement learning.  # Describe yourself.
 
 # comment
-disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
-  name: jalpc
+# disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
+#   name: jalpc
 
 # analytics
 ## google analytics
-ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
-  id: UA-93473370-3
+# ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
+#   id: UA-93473370-3
 
 ## google optimize
 # go:
