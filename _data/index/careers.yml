@@ -7,7 +7,7 @@
     detail: I start my master at NTHU
     i18n: company_a_desc
   date:
-    detail: Apr. 2016
+    detail: Jul. 2020
     i18n: company_a_date
   job:
     detail: CTO
@@ -16,10 +16,10 @@
   present: true
 
 - name:
-    detail: Company B
-    i18n: company_b
+    detail: National Chung Hsing University
+    i18n: NCHU
   desc:
-    detail: I worked at Company B ...
+    detail: I get my B.S. degree at NCHU.
     i18n: company_b_desc
   date:
     detail: Jun. 2015
