@@ -29,7 +29,7 @@
     i18n: company_b_job
   icon: fa-plus-square
 
-  - name:
+- name:
     detail: National Chung Hsing University
     i18n: NCHU
   desc:
