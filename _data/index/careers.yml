@@ -10,7 +10,7 @@
     detail: Jul. 2020
     i18n: company_a_date
   job:
-    detail: CTO
+    detail: Master student
     i18n: company_a_job
   icon: fa-plus-square
   present: true
@@ -22,9 +22,9 @@
     detail: I get my B.S. degree at NCHU.
     i18n: company_b_desc
   date:
-    detail: Jun. 2015
+    detail: Jun. 2020
     i18n: company_b_date
   job:
-    detail: Full Stack Developer
+    detail: Undergraduate student
     i18n: company_b_job
   icon: fa-plus-square
