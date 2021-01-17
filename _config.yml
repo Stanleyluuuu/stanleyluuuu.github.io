@@ -9,7 +9,7 @@ url: https://stanleyluuuu.github.io
 
 # author -- index page "about me" section
 author:  # change following line to your infomation.
-  name: KuanWei Lu
+  name: Stanley
   first_name: Kuan-Wei
   last_name: Lu
   avatar: /static/assets/img/landing/avatar.jpg
@@ -29,13 +29,13 @@ author:  # change following line to your infomation.
   desc: I am a first-year master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on deep reinforcement learning.  # Describe yourself.
 
 # comment
-disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
-  name: jalpc
+# disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
+#   name: jalpc
 
 # analytics
 ## google analytics
-ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
-  id: UA-93473370-3
+# ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
+#   id: UA-93473370-3
 
 ## google optimize
 # go:
