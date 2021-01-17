@@ -11,22 +11,22 @@ url: https://stanleyluuuu.github.io  # url should be 'http://<github_username>.g
 
 # author -- index page "about me" section
 author:  # change following line to your infomation.
-  name: Kuan-Wei Lu  # Be used at blog posts' author.
-  first_name: Kuan-Wei  # Be used at index page about me section.
-  last_name: Lu  # Be used at index page about me section.
-  avatar: /static/assets/img/landing/avatar.jpg  # upload your avatar at directory and edit it.
-  github_username: stanleyluuuu  # Leave blank if you don't have now
-  # linkedin_id:  # Leave blank if you don't have now
-  facebook_username: Stanley Lu  # Leave blank if you don't have now
-  # twitter_username:   # Leave blank if you don't have now
-  email: stanley860920@gmail.com  # Leave blank if you don't have now
-  # cv:  # An online CV can be printed as PDF, leave blank if you don't have now
+  name: KuanWei Lu
+  first_name: Kuan-Wei
+  last_name: Lu
+  avatar: /static/assets/img/landing/avatar.jpeg
+  github_username: stanleyluuuu
+  # linkedin_id:  
+  facebook_username: stanley.lu.10
+  # twitter_username:
+  email: stanley860920@gmail.com
+  # cv:
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
-    - name: icon-apple
-    - name: fa-linux
+    - name: icon-iphone
+    - name: icon-python
   skill_icon2:
-    - name: fa-linux
+    - name: icon-reactjs
     - name: icon-git
   desc: I am a first-year master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on deep reinforcement learning.  # Describe yourself.
 
