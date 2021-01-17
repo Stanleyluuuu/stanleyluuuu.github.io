@@ -16,6 +16,20 @@
   present: true
 
 - name:
+    detail: PMML
+    i18n: PMML
+  desc:
+    detail: I become a undergraduate researcher.
+    i18n: company_b_desc
+  date:
+    detail: Jul. 2018
+    i18n: company_b_date
+  job:
+    detail: Undergraduate researcher
+    i18n: company_b_job
+  icon: fa-plus-square
+
+  - name:
     detail: National Chung Hsing University
     i18n: NCHU
   desc:

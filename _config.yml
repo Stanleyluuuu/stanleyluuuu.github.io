@@ -16,7 +16,7 @@ author:  # change following line to your infomation.
   last_name: Lu  # Be used at index page about me section.
   avatar: /static/assets/img/landing/avatar.jpg  # upload your avatar at directory and edit it.
   github_username: stanleyluuuu  # Leave blank if you don't have now
-  linkedin_id:  # Leave blank if you don't have now
+  # linkedin_id:  # Leave blank if you don't have now
   facebook_username: Stanley Lu  # Leave blank if you don't have now
   # twitter_username:   # Leave blank if you don't have now
   email: stanley860920@gmail.com  # Leave blank if you don't have now
@@ -64,7 +64,6 @@ encoding: utf-8
 # other settings
 highlighter: rouge
 markdown: kramdown
-katex: true
 kramdown:
   input: GFM
   syntax_highlighter: rouge
