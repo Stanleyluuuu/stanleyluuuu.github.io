@@ -1,11 +1,9 @@
-# Welcome to Jekyll!
-
 # Website settings
-title: Kuan-Wei Lu
+title: KuanWei Lu
 description: Stanley's personal website
 keywords: Stanley,github,python
-baseurl: ""   # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
-url: https://stanleyluuuu.github.io  # url should be 'http://<github_username>.github.io/homepage' as before
+baseurl: ""
+url: https://stanleyluuuu.github.io
 # url: http://127.0.0.1:4000
 # img_path: /static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
 
@@ -14,9 +12,9 @@ author:  # change following line to your infomation.
   name: KuanWei Lu
   first_name: Kuan-Wei
   last_name: Lu
-  avatar: /static/assets/img/landing/avatar.jpeg
+  avatar: /static/assets/img/landing/avatar.jpg
   github_username: stanleyluuuu
-  # linkedin_id:  
+  linkedin_id: https://www.linkedin.com/in/stanley-lu-8594ab202/
   facebook_username: stanley.lu.10
   # twitter_username:
   email: stanley860920@gmail.com
@@ -31,13 +29,13 @@ author:  # change following line to your infomation.
   desc: I am a first-year master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on deep reinforcement learning.  # Describe yourself.
 
 # comment
-# disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
-#   name: jalpc
+disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
+  name: jalpc
 
 # analytics
 ## google analytics
-# ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
-#   id: UA-93473370-3
+ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
+  id: UA-93473370-3
 
 ## google optimize
 # go:

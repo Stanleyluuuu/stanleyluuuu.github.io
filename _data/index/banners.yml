@@ -2,8 +2,8 @@
 # Add items for each banner image in the carousel
 #
 # Images are expected to be located in `static/assets/img/`.
-- src: static/assets/img/landing/Header_one.jpg
+- src: landing/header_one.jpg
   title: first banner image
 
-- src: static/assets/img/landing/Header_two.jpg
+- src: landing/header_two.jpg
   title: second banner image

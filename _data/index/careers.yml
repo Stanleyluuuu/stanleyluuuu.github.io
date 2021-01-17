@@ -4,7 +4,7 @@
     detail: National Tsing Hua University
     i18n: NTHU
   desc:
-    detail: I start my master at NTHU
+    detail: I start my master degree at NTHU
     i18n: company_a_desc
   date:
     detail: Jul. 2020
@@ -34,11 +34,11 @@
     i18n: NCHU
   desc:
     detail: I get my B.S. degree at NCHU.
-    i18n: company_b_desc
+    i18n: company_c_desc
   date:
-    detail: Jun. 2020
-    i18n: company_b_date
+    detail: Sep. 2016
+    i18n: company_c_date
   job:
     detail: Undergraduate student
-    i18n: company_b_job
+    i18n: company_c_job
   icon: fa-plus-square
