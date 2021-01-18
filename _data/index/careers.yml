@@ -12,7 +12,7 @@
   job:
     detail: Master student
     i18n: company_a_job
-  icon: fa-plus-square
+  icon: fa-university
   present: true
 
 - name:
@@ -27,7 +27,7 @@
   job:
     detail: College student
     i18n: company_b_job
-  icon: fa-plus-square
+  icon: fa-graduation-cap
 
 - name:
     detail: Precision & Micro Mechatronics Laboratory(PMML)
