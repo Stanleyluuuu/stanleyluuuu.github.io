@@ -25,15 +25,15 @@
   "career":{
     "my_career": "My Career",
     "master": "National Tsing Hua University(NTHU)",
-    "master_des": "I start my master degree at in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.",
+    "master_desc": "I start my master degree at in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.",
     "master_date": "Jul. 2020",
     "master_job": "Master student",
     "college": "Graduation",
-    "college_des": "I get my B.S. degree in Department of Bio-Industrial Mechatronics Engineering(BIME) at National Chung Hsing University(NCHU).",
+    "college_desc": "I get my B.S. degree in Department of Bio-Industrial Mechatronics Engineering(BIME) at National Chung Hsing University(NCHU).",
     "college_date": "Jun. 2020",
     "college_job": "College student",
     "undergraduate": "Precision & Micro Mechatronics Laboratory(PMML)",
-    "undergraduate_des": "I become a undergraduate student at PMML, advised by Prof. Yao-Chuan Tasi.",
+    "undergraduate_desc": "I become a undergraduate student at PMML, advised by Prof. Yao-Chuan Tasi.",
     "undergraduate_date": "Jul. 2018",
     "undergraduate_job": "Undergraduate student"
   },
