@@ -28,14 +28,18 @@
     "master_desc": "開始在國立清華大學的電機工程學系攻讀碩士，指導教授是孫民副教授。",
     "master_date": "2020年7月",
     "master_job": "碩士",
-    "college": "畢業",
-    "college_desc": "畢業於國立中興大學的生物產業機電工程學系並取得學士學位。",
-    "college_date": "2020年6月",
-    "college_job": "學士",
+    "collegegraduate": "畢業",
+    "collegegraduate_desc": "畢業於國立中興大學的生物產業機電工程學系並取得學士學位。",
+    "collegegraduate_date": "2020年6月",
+    "collegegraduate_job": "獲得學士學位",
     "undergraduate": "精微機電實驗室",
     "undergraduate_desc": "成為精微機電實驗室的專題生，指導教授是蔡燿全助理教授。",
     "undergraduate_date": "2018年7月",
-    "undergraduate_job": "專題生"
+    "undergraduate_job": "專題生",
+    "college": " 國立中興大學",
+    "college_desc": "在國立中興大學的生物產業機電工程學系就讀大學。",
+    "college_date": "2016年9月",
+    "college_job": "大學生"
   },
   "blog":{
     "my_blog": "我的部落格"

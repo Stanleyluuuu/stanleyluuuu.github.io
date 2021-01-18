@@ -16,16 +16,16 @@
 
 - name:
     detail: Graduation
-    i18n: college
+    i18n: collegegraduate
   desc:
-    detail: I get my B.S. degree in Department of Bio-Industrial Mechatronics Engineering(BIME) at National Chung Hsing University(NCHU).
-    i18n: college_desc
+    detail: I graduate from the Department of BIME at NCHU and get my B.S. degree.
+    i18n: collegegraduate_desc
   date:
     detail: Jun. 2020
-    i18n: college_date
+    i18n: collegegraduate_date
   job:
-    detail: College student
-    i18n: college_job
+    detail: Get B.S. degree
+    i18n: collegegraduate_job
   icon: fa-graduation-cap
 
 - name:
@@ -41,5 +41,19 @@
     detail: Undergraduate student
     i18n: undergraduate_job
   icon: fa-book
+
+- name:
+    detail: National Chung Hsing University(NCHU)
+    i18n: college
+  desc:
+    detail: I start my B.S. degree in the Department of Bio-Industrial Mechatronics Engineering(BIME) at NCHU.
+    i18n: college_desc
+  date:
+    detail: Sep. 2016
+    i18n: college_date
+  job:
+    detail: college student
+    i18n: college_job
+  icon: fa-university
 
 # The website of the icons. https://fontawesome.com/v4.7.0/icons/
