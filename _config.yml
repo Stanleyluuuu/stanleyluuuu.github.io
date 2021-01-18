@@ -8,7 +8,7 @@ url: https://stanleyluuuu.github.io
 # img_path: /static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
 
 # author -- index page "about me" section
-author:  # change following line to your infomation.
+author:  
   name: Stanley
   first_name: Kuan-Wei
   last_name: Lu
@@ -26,7 +26,7 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: icon-reactjs
     - name: icon-git
-  desc:  I am a first-year master student in Department of Electrical Engineering at National Tsing Hua University(NTHU)
+  desc: 
 
 # comment
 # disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
