@@ -4,7 +4,7 @@
     detail: National Tsing Hua University(NTHU)
     i18n: master
   desc:
-    detail: I start my master degree at in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.
+    detail: #I start my master degree at in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.
     i18n: master_desc
   date:
     detail: Jul. 2020
