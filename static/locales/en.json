@@ -20,22 +20,22 @@
   },
   "projects":{
     "my_projects": "My Projects",
-    "Robust 360-8PA - Redesigning The Normalized 8-point Algorithm for 360-FoV Images": "This project is submitted to ICRA 2021, and it's still under submission."
+    "slam": "This project is submitted to ICRA 2021, and it's still under submission."
   },
   "career":{
     "my_career": "My Career",
-    "nthu": "National Tsing Hua University(NTHU)",
-    "nthu_des": "I start my master degree at in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.",
-    "nthu_date": "Jul. 2020",
-    "nthu_job": "Master student",
-    "nchu": "Graduation",
-    "nchu_des": "I get my B.S. degree in Department of Bio-Industrial Mechatronics Engineering(BIME) at National Chung Hsing University(NCHU).",
-    "nchu_date": "Jun. 2020",
-    "nchu_job": "College student",
-    "pmml": "Precision & Micro Mechatronics Laboratory(PMML)",
-    "pmml_des": "I become a undergraduate student at PMML, advised by Prof. Yao-Chuan Tasi.",
-    "pmml_date": "Jul. 2018",
-    "pmml_job": "Undergraduate student"
+    "master": "National Tsing Hua University(NTHU)",
+    "master_des": "I start my master degree at in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.",
+    "master_date": "Jul. 2020",
+    "master_job": "Master student",
+    "college": "Graduation",
+    "college_des": "I get my B.S. degree in Department of Bio-Industrial Mechatronics Engineering(BIME) at National Chung Hsing University(NCHU).",
+    "college_date": "Jun. 2020",
+    "college_job": "College student",
+    "undergraduate": "Precision & Micro Mechatronics Laboratory(PMML)",
+    "undergraduate_des": "I become a undergraduate student at PMML, advised by Prof. Yao-Chuan Tasi.",
+    "undergraduate_date": "Jul. 2018",
+    "undergraduate_job": "Undergraduate student"
   },
   "blog":{
     "my_blog": "My Blog"

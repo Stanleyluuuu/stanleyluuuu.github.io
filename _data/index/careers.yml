@@ -2,44 +2,44 @@
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
     detail: National Tsing Hua University(NTHU)
-    i18n: NTHU
+    i18n: master
   desc:
     detail: I start my master degree at in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.
-    i18n: company_a_desc
+    i18n: master_desc
   date:
     detail: Jul. 2020
-    i18n: company_a_date
+    i18n: master_date
   job:
     detail: Master student
-    i18n: company_a_job
+    i18n: master_job
   icon: fa-university
 
 - name:
     detail: Graduation
-    i18n: NCHU
+    i18n: college
   desc:
     detail: I get my B.S. degree in Department of Bio-Industrial Mechatronics Engineering(BIME) at National Chung Hsing University(NCHU).
-    i18n: company_b_desc
+    i18n: college_desc
   date:
     detail: Jun. 2020
-    i18n: company_b_date
+    i18n: college_date
   job:
     detail: College student
-    i18n: company_b_job
+    i18n: college_job
   icon: fa-graduation-cap
 
 - name:
     detail: Precision & Micro Mechatronics Laboratory(PMML)
-    i18n: PMML
+    i18n: undergraduate
   desc:
     detail: I become a undergraduate student at PMML, advised by Prof. Yao-Chuan Tasi.
-    i18n: company_c_desc
+    i18n: undergraduate_desc
   date:
     detail: Jul. 2018
-    i18n: company_c_date
+    i18n: undergraduate_date
   job:
     detail: Undergraduate student
-    i18n: company_c_job
+    i18n: undergraduate_job
   icon: fa-book
 
 # The website of the icons. https://fontawesome.com/v4.7.0/icons/

@@ -2,7 +2,7 @@
 # If you don't have language feature(language.yml is empty), ignore "i18n" items
 # Suggest projects' img be located at '/static/assets/img/landing', and edit following img items.
 - name: Robust 360-8PA - Redesigning The Normalized 8-point Algorithm for 360-FoV Images
-  i18n: publication
+  i18n: slam
   gh_user: stanleyluuuu
   repo: # QuEst
   img: /static/assets/img/landing/slam.png
