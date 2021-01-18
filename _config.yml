@@ -26,8 +26,8 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: icon-reactjs
     - name: icon-git
-  desc: I am a first-year master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU)
-# I am a first-year master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on deep reinforcement learning.
+  desc:  I am a first-year master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU)
+
 # comment
 # disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
 #   name: jalpc

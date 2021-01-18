@@ -1,10 +1,10 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
-    detail: National Tsing Hua University
+    detail: National Tsing Hua University(NTHU)
     i18n: NTHU
   desc:
-    detail: I start my master degree at NTHU
+    detail: I start my master degree at in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.
     i18n: company_a_desc
   date:
     detail: Jul. 2020
@@ -16,27 +16,27 @@
   present: true
 
 - name:
-    detail: PMML
-    i18n: PMML
+    detail: Graduation
+    i18n: NCHU
   desc:
-    detail: I become a undergraduate researcher.
+    detail: I get my B.S. degree in Department of Bio-Industrial Mechatronics Engineering(BIME) at National Chung Hsing University(NCHU).
     i18n: company_b_desc
   date:
-    detail: Jul. 2018
+    detail: Jun. 2020
     i18n: company_b_date
   job:
-    detail: Undergraduate researcher
+    detail: College student
     i18n: company_b_job
   icon: fa-plus-square
 
 - name:
-    detail: National Chung Hsing University
-    i18n: NCHU
+    detail: Precision & Micro Mechatronics Laboratory(PMML)
+    i18n: PMML
   desc:
-    detail: I get my B.S. degree at NCHU.
+    detail: I become a undergraduate student at PMML, advised by Prof. Yao-Chuan Tasi.
     i18n: company_c_desc
   date:
-    detail: Sep. 2016
+    detail: Jul. 2018
     i18n: company_c_date
   job:
     detail: Undergraduate student
