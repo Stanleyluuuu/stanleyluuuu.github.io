@@ -13,7 +13,6 @@
     detail: Master student
     i18n: company_a_job
   icon: fa-university
-  present: true
 
 - name:
     detail: Graduation
