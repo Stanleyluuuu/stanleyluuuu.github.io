@@ -4,7 +4,7 @@
     detail: National Tsing Hua University(NTHU)
     i18n: master
   desc:
-    detail: I start my master degree in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.
+    detail: Start my master degree in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.
     i18n: master_desc
   date:
     detail: Jul. 2020
@@ -18,7 +18,7 @@
     detail: Graduation
     i18n: collegegraduate
   desc:
-    detail: I graduate from the Department of BIME at NCHU and get my B.S. degree.
+    detail: Graduate from the Department of BIME at NCHU and get my B.S. degree.
     i18n: collegegraduate_desc
   date:
     detail: Jun. 2020
@@ -32,7 +32,7 @@
     detail: Precision & Micro Mechatronics Laboratory(PMML)
     i18n: undergraduate
   desc:
-    detail: I become a undergraduate student at PMML, advised by Prof. Yao-Chuan Tasi.
+    detail: Become a undergraduate student at PMML, advised by Prof. Yao-Chuan Tasi.
     i18n: undergraduate_desc
   date:
     detail: Jul. 2018
@@ -46,7 +46,7 @@
     detail: National Chung Hsing University(NCHU)
     i18n: college
   desc:
-    detail: I start my B.S. degree in the Department of Bio-Industrial Mechatronics Engineering(BIME) at NCHU.
+    detail: Start my B.S. degree in the Department of Bio-Industrial Mechatronics Engineering(BIME) at NCHU.
     i18n: college_desc
   date:
     detail: Sep. 2016
