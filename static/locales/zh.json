@@ -13,14 +13,14 @@
   },
   "about_me":{
     "about_me": "關於我",
-    "desc": "我是國立清華大學電機工程學系的研究生，指導教授是孫民副教授。研究的領域主要是機器學習(ML)和電腦視覺(CV)，最近我開始把研究方向轉往NAS(Neural Architecture Search)。"
+    "desc": "我是國立清華大學電機工程學系的研究生，指導教授是孫民副教授。研究的領域主要是機器學習(ML)和電腦視覺(CV)，最近我開始把研究方向專注於物件偵測(Object Detection)的Robustness。"
   },
   "skills":{
     "my_skills": "我的技能"
   },
   "projects":{
-    "my_projects": "我的專案",
-    "slam": "這是我和學長合作的SLAM project，已投稿至ICRA 2021, 並被接受了。"
+    "my_projects": "發表",
+    "slam": "投稿至IEEE International Conference on Robotics and Automation (ICRA), 2021。"
   },
   "career":{
     "my_career": "職業生涯",

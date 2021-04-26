@@ -16,7 +16,7 @@ author:
   github_username: stanleyluuuu
   linkedin_id: stanley-lu-8594ab202
   facebook_username: stanley.lu.10
-  # twitter_username:
+  twitter_username: stanley860920
   email: stanley860920@gmail.com
   # cv:
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
@@ -26,7 +26,7 @@ author:
   skill_icon2:
     - name: icon-reactjs
     - name: icon-git
-  desc: I am a first-year master student in Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on neural architecture search(NAS).
+  desc: I am a master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on the robustness of object detection.
 
 # comment
 # disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.

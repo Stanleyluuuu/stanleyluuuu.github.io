@@ -13,14 +13,14 @@
   },
   "about_me":{
     "about_me": "About Me",
-    "desc": "I am a first-year master student in Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on neural architecture search(NAS)."
+    "desc": "I am a master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on the robustness of object detection."
   },
   "skills":{
     "my_skills": "My Skills"
   },
   "projects":{
-    "my_projects": "My Projects",
-    "slam": "This project is submitted to ICRA 2021, and it's has been accepted."
+    "my_projects": "Publications",
+    "slam": "Accepted by IEEE International Conference on Robotics and Automation (ICRA), 2021."
   },
   "career":{
     "my_career": "My Career",
