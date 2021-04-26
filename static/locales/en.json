@@ -6,24 +6,24 @@
     "home": "Home",
     "about_me": "About",
     "skills": "Skills",
-    "projects": "Projects",
+    "projects": "Publications",
     "career": "Career",
     "blog": "Blog",
-    "link": "Link"
+    "link": "Links"
   },
   "about_me":{
     "about_me": "About Me",
     "desc": "I am a master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on the robustness of object detection."
   },
   "skills":{
-    "my_skills": "My Skills"
+    "my_skills": "Skills"
   },
   "projects":{
     "my_projects": "Publications",
     "slam": "Accepted by IEEE International Conference on Robotics and Automation (ICRA), 2021."
   },
   "career":{
-    "my_career": "My Career",
+    "my_career": "Career",
     "master": "National Tsing Hua University(NTHU)",
     "master_desc": "Start my master degree in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.",
     "master_date": "Jul. 2020",

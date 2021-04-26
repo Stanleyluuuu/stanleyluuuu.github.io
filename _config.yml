@@ -21,7 +21,7 @@ author:
   # cv:
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
-    - name: icon-iphone
+    - name: icon-gradle
     - name: icon-python
   skill_icon2:
     - name: icon-reactjs
