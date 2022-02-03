@@ -1,0 +1,52 @@
+{
+  "website":{
+    "title": "Stanley's personal website"
+  },
+  "nav":{
+    "home": "Home",
+    "about_me": "About",
+    "skills": "Skills",
+    "projects": "Publications",
+    "career": "Career",
+    "blog": "Blog",
+    "link": "Links"
+  },
+  "about_me":{
+    "about_me": "About Me",
+    "desc": "I am a second-year master student in the Department of Electrical Engineering at National Tsing Hua University (NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Currently, my research interest lays in domain adaptation and semi-supervised learning object detection."
+  },
+  "skills":{
+    "my_skills": "Skills"
+  },
+  "projects":{
+    "my_projects": "Publications",
+    "slam": "Accepted by IEEE International Conference on Robotics and Automation (ICRA), 2021."
+  },
+  "career":{
+    "my_career": "Career",
+    "master": "National Tsing Hua University(NTHU)",
+    "master_desc": "Start my master degree in Department of Electrical Engineering(EE) at NTHU, advised by Prof. Min Sun.",
+    "master_date": "Jul. 2020",
+    "master_job": "Master student",
+    "collegegraduate": "Graduation",
+    "collegegraduate_desc": "Graduate from the Department of BIME at NCHU and get my B.S. degree.",
+    "collegegraduate_date": "Jun. 2020",
+    "collegegraduate_job": "Get B.S. degree",
+    "undergraduate": "Precision & Micro Mechatronics Laboratory(PMML)",
+    "undergraduate_desc": "Become a undergraduate student at PMML, advised by Prof. Yao-Chuan Tasi.",
+    "undergraduate_date": "Jul. 2018",
+    "undergraduate_job": "Undergraduate student",
+    "college": "National Chung Hsing University(NCHU)",
+    "college_desc": "Start my B.S. degree in the Department of Bio-Industrial Mechatronics Engineering(BIME) at NCHU.",
+    "college_date": "Sep. 2016",
+    "college_job": "college student"
+  },
+  "blog":{
+    "my_blog": "My Blog"
+  },
+  "link":{
+    "link": "Links",
+    "view": "views"
+  }
+
+}
