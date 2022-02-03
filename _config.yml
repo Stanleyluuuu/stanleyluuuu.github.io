@@ -1,3 +1,7 @@
+include: 
+  - .nojekyll
+
+
 lang:                  en
 title:                 Hydejack
 copyright:             © 2021. All rights reserved.
