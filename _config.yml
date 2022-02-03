@@ -1,68 +1,74 @@
-# Website settings
-title: KuanWei Lu
-description: Stanley's personal website
-keywords: Stanley,github,python
-baseurl: ""
-url: https://stanleyluuuu.github.io
-# url: http://127.0.0.1:4000
-# img_path: /static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
+lang:                  en
+title:                 Hydejack
+copyright:             © 2021. All rights reserved.
 
-# author -- index page "about me" section
-author:  
-  name: Stanley
-  first_name: Kuan-Wei
-  last_name: Lu
-  avatar: /static/assets/img/landing/avatar.jpg
-  github_username: stanleyluuuu
-  linkedin_id: stanley-lu-8594ab202
-  facebook_username: stanley.lu.10
-  twitter_username: stanley860920
-  email: stanley860920@gmail.com
-  cv: ./pdf/Google-CV.pdf
-  # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
-  skill_icon1:
-    - name: icon-gradle
-    - name: icon-python
-  skill_icon2:
-    - name: icon-reactjs
-    - name: icon-git
-  # desc: I am a master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on the robustness of object detection.
+accent_image:          /assets/img/sidebar-bg.jpg
+accent_color:          rgb(79,177,186)
+theme_color:           rgb(25,55,71)
 
-# comment
-# disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
-#   name: jalpc
+google_fonts:          Roboto+Slab:700|Noto+Sans:400,400i,700,700i
+font:                  Noto Sans, Helvetica, Arial, sans-serif
+font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
+font-code:             ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-# analytics
-## google analytics
-# ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
-#   id: UA-93473370-3
+hydejack:
+  post_addons:         [about, newsletter, related, random, comments]
+  project_addons:      [about, newsletter, other, comments]
 
-## google optimize
-# go:
-  # id:
+  no_mark_external:    false
+  no_push_state:       false
+  no_drawer:           false
+  no_navbar:           false
+  no_search:           false
+  no_inline_css:       false
+  no_page_style:       false
+  no_break_layout:     true
+  no_toc:              false
+  no_third_column:     false
+  no_large_headings:   false
+  no_structured_data:  false
+  no_theme_color:      false
+  no_breadcrumbs:      false
 
-## growingIO
-# gio:  # if you wanna this feature, go to https://www.growingio.com/ to get your configuration; if not, comment following line.
-  # id:
+  use_lsi:             true
+  cookies_banner:      true
+  advertise:           true
+  hide_dates:          false
+  hide_last_modified:  false
 
-## donation
-donation: off  # type 'on'/'off' to choice display donation button at post page or not
+  dark_mode:
+    always:            false
+    dynamic:           true
+    sunrise:           6
+    sunset:            18
+    icon:              true
 
-## carousels
-index_carousel: on  # index page carousel switch
-blog_carousel: off  # blog page carousel switch
+  offline:
+    enabled:           false
+    cache_version:     1
+    precache_assets:
+      - /assets/img/swipe.svg
 
-# scss
+optional_front_matter:
+  remove_originals:    true
+
+readme_index:
+  remove_originals:    true
+  with_frontmatter:    true
+
+relative_links:
+  collections:         true
+
+titles_from_headings:
+  strip_title:         true
+  collections:         true
+
+compress_html:
+  comments:            ["<!-- ", " -->"]
+  clippings:           all
+  endings:             all
+  ignore:
+    envs:              [development]
+
 sass:
-  style: compressed
-
-# Build settings
-encoding: utf-8
-
-# other settings
-highlighter: rouge
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-
+  style:               compressed
