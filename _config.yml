@@ -26,7 +26,7 @@ author:
   skill_icon2:
     - name: icon-reactjs
     - name: icon-git
-  desc: I am a master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on the robustness of object detection.
+  # desc: I am a master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on the robustness of object detection.
 
 # comment
 # disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
