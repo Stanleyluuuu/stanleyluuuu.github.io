@@ -13,7 +13,7 @@
   },
   "about_me":{
     "about_me": "About Me",
-    "desc": "I am a second-year master student in the Department of Electrical Engineering at National Tsing Hua University (NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Currently, my research interest lays in domain adaptation and semi-supervised learning object detection."
+    "desc": "I am a master student in the Department of Electrical Engineering at National Tsing Hua University(NTHU), advised by Prof. Min Sun. I am interested in machine learning and computer vision. Recently, my research focus on the robustness of object detection."
   },
   "skills":{
     "my_skills": "Skills"
