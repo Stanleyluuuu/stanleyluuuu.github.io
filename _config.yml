@@ -1,6 +1,7 @@
 include: 
   - .nojekyll
-
+exclude:
+ignore:
 
 lang:                  en
 title:                 Hydejack
