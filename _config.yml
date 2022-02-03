@@ -15,8 +15,8 @@ author:
   avatar: /static/assets/img/landing/avatar.jpg
   github_username: stanleyluuuu
   linkedin_id: stanley-lu-8594ab202
-  facebook_username: stanley.lu.10
-  twitter_username: stanley860920
+  # facebook_username: stanley.lu.10
+  # twitter_username: stanley860920
   email: stanley860920@gmail.com
   cv: ./pdf/Google-CV.pdf
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
