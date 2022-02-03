@@ -2,5 +2,5 @@
 
 label: Ability
 id : cs
-aspects: GitHub, Python, Machine Learning, HTML, C++, JavaScript
-percentage: 100, 85, 95, 54, 30, 28
+aspects: GitHub, Python, Machine Learning, Matlab, C++, Parallel Programming
+percentage: 100, 85, 95, 70, 40, 65
