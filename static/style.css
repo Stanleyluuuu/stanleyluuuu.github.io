@@ -3,9 +3,40 @@
    Fonts loaded via <link> in layouts/partials/head/extensions.html
    ============================================================ */
 
+/* ============================================================
+   CSS CUSTOM PROPERTIES — colour system
+   ============================================================ */
+:root {
+  --bg-base:    #ffffff;
+  --bg-surface: #f8faff;
+  --bg-raised:  #eef4ff;
+
+  --border-subtle:  rgba(37, 99, 235, 0.08);
+  --border-default: rgba(37, 99, 235, 0.14);
+  --border-accent:  rgba(99, 179, 237, 0.35);
+
+  --accent:       #2563EB;
+  --accent-light: #60A5FA;
+  --accent-glow:  rgba(37, 99, 235, 0.12);
+}
+
+body.dark {
+  --bg-base:    #0d1117;
+  --bg-surface: #161b22;
+  --bg-raised:  #1c2333;
+
+  --border-subtle:  rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.10);
+  --border-accent:  rgba(99, 179, 237, 0.28);
+
+  --accent:       #4299e1;
+  --accent-light: #63b3ed;
+  --accent-glow:  rgba(66, 153, 225, 0.14);
+}
+
 /* --- Typography --- */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 1rem;
   letter-spacing: -0.01em;
 }
@@ -14,6 +45,10 @@ h1, h2, h3, h4, h5, h6,
 .navbar-brand {
   font-family: 'Outfit', sans-serif;
   letter-spacing: -0.03em;
+}
+
+code, pre, .tech-tag {
+  font-family: 'DM Mono', monospace;
 }
 
 /* --- Hero --- */
@@ -26,6 +61,14 @@ h1, h2, h3, h4, h5, h6,
 #hero h1 {
   font-weight: 700;
   line-height: 1.1;
+}
+
+body.dark #hero h1 {
+  background: linear-gradient(135deg, #ffffff 0%, #90cdf4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 36px rgba(66, 153, 225, 0.28));
 }
 
 #hero h2 {
@@ -64,6 +107,18 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* --- Navbar --- */
+nav, .navbar, header nav {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+body.dark nav,
+body.dark .navbar,
+body.dark header nav {
+  background: rgba(13, 17, 23, 0.80) !important;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
 .navbar-brand {
   font-weight: 700;
   font-size: 1.15rem;
@@ -97,12 +152,12 @@ h1, h2, h3, h4, h5, h6,
 #education  { background-color: #ffffff !important; }
 #contact    { background-color: #EFF6FF !important; }
 
-/* Dark mode overrides — keep everything in the dark navy palette */
-body.dark #about      { background-color: #1E293B !important; }
-body.dark #experience { background-color: #0F172A !important; }
-body.dark #projects   { background-color: #1E293B !important; }
-body.dark #education  { background-color: #0F172A !important; }
-body.dark #contact    { background-color: #1E293B !important; }
+/* Dark mode overrides — layered depth with new colour system */
+body.dark #about      { background-color: var(--bg-surface) !important; }
+body.dark #experience { background-color: var(--bg-base)    !important; }
+body.dark #projects   { background-color: var(--bg-surface) !important; }
+body.dark #education  { background-color: var(--bg-base)    !important; }
+body.dark #contact    { background-color: var(--bg-surface) !important; }
 
 /* ============================================================
    ABOUT — skill pills
@@ -178,12 +233,24 @@ body.dark #contact    { background-color: #1E293B !important; }
 
 #projects .card.project-card-noimg {
   min-height: unset !important;
-  border: 1px solid var(--secondary-color) !important;
-  border-radius: 1rem !important;
-  border-left: 4px solid var(--primary-color) !important;
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.07) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 12px !important;
+  border-left: 3px solid var(--accent) !important;
+  background: var(--bg-surface);
+  box-shadow: 0 4px 16px var(--accent-glow) !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
   will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+#projects .card.project-card-noimg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(66, 153, 225, 0.04) 0%, transparent 55%);
+  pointer-events: none;
 }
 
 /* Fix: ensure card title and body text are always visible */
@@ -202,8 +269,11 @@ body.dark #contact    { background-color: #1E293B !important; }
 
 #projects .card.project-card-noimg:hover {
   transform: translateY(-4px) !important;
-  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.12) !important;
-  background-color: rgba(37, 99, 235, 0.03) !important;
+  border-color: var(--border-accent) !important;
+  box-shadow:
+    0 0 0 1px rgba(99, 179, 237, 0.08),
+    0 12px 40px rgba(0, 0, 0, 0.22),
+    0 2px 8px var(--accent-glow) !important;
 }
 
 /* Badge chips */
@@ -229,9 +299,10 @@ body.dark #contact    { background-color: #1E293B !important; }
    ============================================================ */
 
 #experience .experience-container {
-  border-radius: 1rem !important;
-  border: 1px solid var(--secondary-color) !important;
-  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08) !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: 0 4px 24px var(--accent-glow) !important;
+  background: var(--bg-surface);
 }
 
 #experience .nav-item .nav-link.active {
@@ -248,21 +319,69 @@ body.dark #contact    { background-color: #1E293B !important; }
    EDUCATION
    ============================================================ */
 
+/* Header row: title left, date right — date never wraps */
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.edu-date {
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary-color);
+  padding-top: 0.15rem;
+}
+
 /* Both cards: same border treatment, consistent hover */
 #education .card {
-  border: 1px solid transparent !important;
+  border: 1px solid var(--border-subtle) !important;
+  background: var(--bg-surface);
   box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+  border-radius: 12px !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
 }
 
 #education .card:hover {
   transform: translateY(-3px);
-  border-color: var(--primary-color) !important;
-  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.14) !important;
+  border-color: var(--border-accent) !important;
+  box-shadow:
+    0 0 0 1px rgba(99, 179, 237, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.18),
+    0 2px 8px var(--accent-glow) !important;
 }
 
 #education .index {
   background-color: var(--primary-color) !important;
+}
+
+/* Lab link button — unified pill style (VSLab & PMML) */
+.lab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid rgba(99, 179, 237, 0.35);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  font-family: 'DM Mono', monospace;
+  color: #4299e1;
+  background: rgba(99, 179, 237, 0.07);
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.lab-btn:hover {
+  background: rgba(99, 179, 237, 0.16);
+  border-color: rgba(99, 179, 237, 0.6);
+  color: #63b3ed;
+  transform: translateY(-1px);
+  text-decoration: none;
 }
 
 /* ============================================================
@@ -286,8 +405,36 @@ body.dark #contact    { background-color: #1E293B !important; }
    FOOTER
    ============================================================ */
 
+footer {
+  border-top: 1px solid var(--border-subtle);
+}
+
+body.dark footer {
+  background: linear-gradient(to bottom, var(--bg-surface) 0%, var(--bg-base) 100%);
+}
+
 footer a[href*="github"]:hover   { color: #24292F !important; }
 footer a[href*="linkedin"]:hover { color: #0A66C2 !important; }
+
+/* ============================================================
+   TECH TAGS — monospace pill with accent border
+   ============================================================ */
+.tech-tag {
+  background: rgba(37, 99, 235, 0.10) !important;
+  border: 1px solid rgba(37, 99, 235, 0.22) !important;
+  color: var(--accent-light) !important;
+  border-radius: 6px !important;
+  padding: 0.2rem 0.65rem !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.tech-tag:hover {
+  background: rgba(37, 99, 235, 0.18) !important;
+  border-color: rgba(37, 99, 235, 0.4) !important;
+}
 
 /* ============================================================
    DELIGHT
