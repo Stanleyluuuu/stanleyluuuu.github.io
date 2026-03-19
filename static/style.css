@@ -16,11 +16,11 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: -0.03em;
 }
 
-/* --- Hero: reduce full-screen height --- */
+/* --- Hero --- */
 #hero {
   min-height: 80vh !important;
-  padding-top: 5rem !important;
-  padding-bottom: 3rem !important;
+  padding-top: 4rem !important;
+  padding-bottom: 2rem !important;
 }
 
 #hero h1 {
@@ -48,16 +48,17 @@ h1, h2, h3, h4, h5, h6,
               0 16px 48px rgba(37, 99, 235, 0.2) !important;
 }
 
-/* Hero Resume button: filled indigo */
+/* Hero Resume button: filled blue, vertically aligned with social icons */
 #hero a.btn:not(.social-icon) {
   background-color: var(--primary-color) !important;
   color: #FAFAF8 !important;
   border-color: var(--primary-color) !important;
   font-weight: 600;
+  vertical-align: middle !important;
 }
 
 #hero a.btn:not(.social-icon):hover {
-  background-color: #3730a3 !important;
+  background-color: #1D4ED8 !important;
   color: #FAFAF8 !important;
   opacity: 1 !important;
 }
@@ -84,20 +85,45 @@ h1, h2, h3, h4, h5, h6,
   padding: 4px !important;
 }
 
-/* --- Section background alternation for visual rhythm --- */
-#about    { background-color: #EFF6FF !important; }  /* very faint blue wash */
-#projects { background-color: #FAFAFA !important; }
-#contact  { background-color: #EFF6FF !important; }
+/* ============================================================
+   SECTION BACKGROUNDS — light mode alternation
+   Order: Hero(white) → About(blue-tint) → Experience(white)
+          → Projects(blue-tint) → Education(white) → Contact(blue-tint)
+   ============================================================ */
 
-/* --- About: skill pills — color-grouped --- */
+#about      { background-color: #EFF6FF !important; }
+#experience { background-color: #ffffff !important; }
+#projects   { background-color: #EFF6FF !important; }
+#education  { background-color: #ffffff !important; }
+#contact    { background-color: #EFF6FF !important; }
+
+/* Dark mode overrides — keep everything in the dark navy palette */
+body.dark #about      { background-color: #1E293B !important; }
+body.dark #experience { background-color: #0F172A !important; }
+body.dark #projects   { background-color: #1E293B !important; }
+body.dark #education  { background-color: #0F172A !important; }
+body.dark #contact    { background-color: #1E293B !important; }
+
+/* ============================================================
+   ABOUT — skill pills
+   ============================================================ */
+
+/* Fix: theme sets overflow:hidden on #about ul which clips pill hover */
 #about ul {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 10px;
-  padding: 0;
-  margin: 20px 0 0;
+  padding: 6px 2px 2px;   /* top padding gives first-row pills room to lift */
+  margin: 14px 0 0;
   list-style: none;
   grid-template-columns: unset;
+  overflow: visible !important;
+}
+
+/* About content text: explicit color to prevent any cascade bug */
+#about .content,
+#about .content p {
+  color: var(--text-color) !important;
 }
 
 #about ul li {
@@ -107,18 +133,22 @@ h1, h2, h3, h4, h5, h6,
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 500;
-  /* default: outline style */
   background-color: transparent;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
+  /* Hover animation */
+  transition: transform 0.18s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.18s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.18s ease;
+  cursor: default;
 }
 
 #about ul li::before { content: none; }
 
-/* Core AI/ML skills (1–4): filled indigo */
+/* Core AI/ML skills (1–4): filled primary blue */
 #about ul li:nth-child(-n+4) {
   background-color: var(--primary-color);
-  color: #F5F4FF;
+  color: #F0F9FF;
   border-color: var(--primary-color);
 }
 
@@ -129,60 +159,38 @@ h1, h2, h3, h4, h5, h6,
   border-color: #0369A1;
 }
 
-/* Remaining (9–12): indigo outline */
+/* Remaining (9+): outline */
 #about ul li:nth-child(n+9) {
   background-color: transparent;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
 }
 
-/* Skill pill hover: lift + subtle shadow */
-#about ul li {
-  transition: transform 0.18s cubic-bezier(0.25, 1, 0.5, 1),
-              box-shadow 0.18s cubic-bezier(0.25, 1, 0.5, 1),
-              opacity 0.18s ease;
-  cursor: default;
-}
-
 #about ul li:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
-  opacity: 0.9;
+  opacity: 0.88;
 }
 
-/* --- Projects: no-image cards with color-coded left border --- */
+/* ============================================================
+   PROJECTS — no-image cards, unified left border
+   ============================================================ */
+
 #projects .card.project-card-noimg {
   min-height: unset !important;
   border: 1px solid var(--secondary-color) !important;
   border-radius: 1rem !important;
-  border-left-width: 4px !important;
+  border-left: 4px solid var(--primary-color) !important;
   box-shadow: 0 4px 16px rgba(37, 99, 235, 0.07) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  will-change: transform;
 }
 
-/* Card 1 — AI Surveillance (Computer Vision → blue) */
-#projects .row .col-lg-6:nth-child(1) .project-card-noimg {
-  border-left-color: #2563EB !important;
-}
-
-/* Card 2 — Document Inspection (OCR/Automation → amber) */
-#projects .row .col-lg-6:nth-child(2) .project-card-noimg {
-  border-left-color: #D97706 !important;
-}
-
-/* Card 3 — VLM/LLM Research (AI/GenAI → violet) */
-#projects .row .col-lg-6:nth-child(3) .project-card-noimg {
-  border-left-color: #7C3AED !important;
-}
-
-/* Card 4 — ICRA Research (Academic → teal) */
-#projects .row .col-lg-6:nth-child(4) .project-card-noimg {
-  border-left-color: #0891B2 !important;
-}
-
-#projects .card.project-card-noimg:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.12) !important;
+/* Fix: ensure card title and body text are always visible */
+#projects .card.project-card-noimg .card-title,
+#projects .card.project-card-noimg .card-text,
+#projects .card.project-card-noimg .card-text p {
+  color: var(--text-color) !important;
 }
 
 #projects .card.project-card-noimg .card-title {
@@ -192,25 +200,34 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: -0.02em;
 }
 
-/* Badge chips: color tinted by position to match project domain */
+#projects .card.project-card-noimg:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.12) !important;
+  background-color: rgba(37, 99, 235, 0.03) !important;
+}
+
+/* Badge chips */
 #projects .row .col-lg-6:nth-child(1) .badge {
   background-color: #DBEAFE !important;
   color: #1D4ED8 !important;
 }
 #projects .row .col-lg-6:nth-child(2) .badge {
-  background-color: #FEF3C7 !important;
-  color: #92400E !important;
+  background-color: #DBEAFE !important;
+  color: #1D4ED8 !important;
 }
 #projects .row .col-lg-6:nth-child(3) .badge {
-  background-color: #EDE9FE !important;
-  color: #5B21B6 !important;
+  background-color: #DBEAFE !important;
+  color: #1D4ED8 !important;
 }
 #projects .row .col-lg-6:nth-child(4) .badge {
-  background-color: #CFFAFE !important;
-  color: #164E63 !important;
+  background-color: #DBEAFE !important;
+  color: #1D4ED8 !important;
 }
 
-/* --- Experience container --- */
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+
 #experience .experience-container {
   border-radius: 1rem !important;
   border: 1px solid var(--secondary-color) !important;
@@ -222,12 +239,16 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 600;
 }
 
-/* "present" jobs — subtle green dot next to date */
+/* "present" jobs — subtle green text */
 #experience small:is([data-i18n*="present"], [class*="present"]) {
   color: #059669;
 }
 
-/* --- Education cards --- */
+/* ============================================================
+   EDUCATION
+   ============================================================ */
+
+/* Both cards: same border treatment, consistent hover */
 #education .card {
   border: 1px solid transparent !important;
   box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08) !important;
@@ -240,44 +261,43 @@ h1, h2, h3, h4, h5, h6,
   box-shadow: 0 8px 32px rgba(37, 99, 235, 0.14) !important;
 }
 
-/* Education index badge — keep indigo */
 #education .index {
   background-color: var(--primary-color) !important;
 }
 
-/* --- Contact CTA: filled indigo button --- */
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
 #contact .btn {
   background-color: var(--primary-color) !important;
-  color: #F5F4FF !important;
+  color: #F0F9FF !important;
   border-color: var(--primary-color) !important;
   font-weight: 600;
   padding: 0.65rem 2rem !important;
 }
 
 #contact .btn:hover {
-  background-color: #3730a3 !important;
+  background-color: #1D4ED8 !important;
   opacity: 1 !important;
 }
 
-/* --- Footer social icons: brand colors on hover --- */
-footer a[href*="github"]:hover { color: #24292F !important; }
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer a[href*="github"]:hover   { color: #24292F !important; }
 footer a[href*="linkedin"]:hover { color: #0A66C2 !important; }
 
 /* ============================================================
    DELIGHT
    ============================================================ */
 
-/* Hero: subtle dot-grid background (technical / graph-paper feel) */
+/* Hero: subtle dot-grid background */
 #hero {
   background-image: radial-gradient(circle, rgba(37, 99, 235, 0.10) 1px, transparent 1px);
   background-size: 28px 28px;
 }
-
-/* Card hover: left-border accent color bleeds as faint background tint */
-#projects .row .col-lg-6:nth-child(1) .project-card-noimg:hover { background-color: rgba(37,  99, 235, 0.04) !important; }
-#projects .row .col-lg-6:nth-child(2) .project-card-noimg:hover { background-color: rgba(217, 119,  6, 0.04) !important; }
-#projects .row .col-lg-6:nth-child(3) .project-card-noimg:hover { background-color: rgba(124, 58, 237, 0.04) !important; }
-#projects .row .col-lg-6:nth-child(4) .project-card-noimg:hover { background-color: rgba(8,  145, 178, 0.04) !important; }
 
 /* "Live" pulsing green dot on the first experience nav tab (current role) */
 #experience .nav-item:first-child .nav-link::before {
@@ -357,7 +377,7 @@ footer a[href*="linkedin"]:hover { color: #0A66C2 !important; }
   transform: translateY(0);
 }
 
-/* Hero image: subtle float loop (starts after fade-in) */
+/* Hero image: subtle float loop */
 @keyframes avatar-float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-8px); }
@@ -430,11 +450,6 @@ header .navbar-nav .nav-link:hover::after {
     transform: translate(-50%, -50%) scale(30);
     opacity: 0;
   }
-}
-
-/* Project card hover — already translateY(-4px), enhance border transition */
-#projects .card.project-card-noimg {
-  will-change: transform;
 }
 
 /* --- Reduced motion --- */
