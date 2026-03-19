@@ -38,21 +38,21 @@ params:
     defaultTheme: "light"
 
   color:
-    textColor: "#1E1B4B"
-    secondaryTextColor: "#4B5563"
-    textLinkColor: "#4338CA"
-    backgroundColor: "#FAFAF8"
-    secondaryBackgroundColor: "#EEF2FF"
-    primaryColor: "#4338CA"
-    secondaryColor: "#F0F0FF"
+    textColor: "#0F172A"
+    secondaryTextColor: "#475569"
+    textLinkColor: "#2563EB"
+    backgroundColor: "#ffffff"
+    secondaryBackgroundColor: "#EFF6FF"
+    primaryColor: "#2563EB"
+    secondaryColor: "#EFF6FF"
     darkmode:
-      textColor: "#E8E7FF"
-      secondaryTextColor: "#A5B4FC"
-      textLinkColor: "#818CF8"
-      backgroundColor: "#0F0E1A"
-      secondaryBackgroundColor: "#1A1830"
-      primaryColor: "#818CF8"
-      secondaryColor: "#1E1B4B"
+      textColor: "#F1F5F9"
+      secondaryTextColor: "#94A3B8"
+      textLinkColor: "#60A5FA"
+      backgroundColor: "#0F172A"
+      secondaryBackgroundColor: "#1E293B"
+      primaryColor: "#60A5FA"
+      secondaryColor: "#1E293B"
 
   font:
     fontSize: 1rem
@@ -81,7 +81,6 @@ params:
     enable: true
     intro: "Hi, my name is"
     title: "Stanley."
-    subtitle: "I build AI systems that scale."
     content: |-
       AI Software Engineer at Garmin Ltd., leading large-scale computer vision and GenAI platforms.
       Passionate about LLM/VLM research, MLOps, and deploying cutting-edge AI into production.
@@ -263,6 +262,9 @@ params:
     toc: "Table Of Contents"
     copyright: "All rights reserved"
     emailText: "Check out this site"
+
+  customScripts: |
+    <script src="/js/animations.js" defer></script>
 
   datesFormat:
     article: "Jan 2, 2006"
