@@ -1,0 +1,261 @@
+baseURL: "https://stanleyluuuu.github.io/"
+languageCode: "en-us"
+title: "Kuan-Wei Lu"
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+enableRobotsTXT: true
+
+pagination:
+  pagerSize: 3
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: blog
+      name: Blog
+      title: Blog posts
+      url: /blogs
+      weight: 1
+
+params:
+  title: "Kuan-Wei Lu"
+  description: "AI Software Engineer specializing in Computer Vision, LLM/VLM, and MLOps"
+  favicon: "/assets/img/landing/avatar.jpg"
+
+  animate: true
+
+  theme:
+    defaultTheme: "light"
+
+  font:
+    fontSize: 1rem
+    fontWeight: 400
+    lineHeight: 1.5
+    textAlign: left
+
+  navbar:
+    align: ms-auto
+    brandName: "Kuan-Wei Lu"
+    disableSearch: true
+    stickyNavBar:
+      enable: true
+      showOnScrollUp: true
+    enableSeparator: false
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: true
+      disableContact: false
+
+  # Hero Section
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Stanley."
+    subtitle: "I build AI systems that scale."
+    content: |-
+      AI Software Engineer at Garmin Ltd., leading large-scale computer vision and GenAI platforms.
+      Passionate about LLM/VLM research, MLOps, and deploying cutting-edge AI into production.
+    image: /assets/img/landing/avatar.jpg
+    roundImage: true
+    bottomImage:
+      enable: true
+    button:
+      enable: true
+      name: "Resume"
+      url: "/pdf/20260319_CV.pdf"
+      download: true
+      newPage: true
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/Stanleyluuuu
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/kuan-wei-lu-8594ab202
+      customIcons:
+        - icon: /assets/img/landing/avatar.jpg
+          url: "mailto:stanley860920@gmail.com"
+
+  # About Section
+  about:
+    enable: true
+    title: "About Me"
+    image: "/assets/img/landing/avatar.jpg"
+    content: |-
+      I am an **AI Software Engineer at Garmin Ltd.** (Nov 2023 – present), where I lead the development of an organization-wide computer vision platform scaling across **200+ active production services**.
+
+      I pioneer GenAI adoption by evaluating SOTA LLM/VLM models, executing proof-of-concepts, and driving enterprise deployment of high-value AI use cases. I also mentor interns on AI system design and own the full lifecycle of cross-functional AI infrastructure.
+
+      Previously, I completed my **Master's in Electrical Engineering at NTHU**, conducting research in computer vision under Prof. Min Sun, which resulted in a publication at **ICRA 2021**.
+    skills:
+      enable: true
+      title: "Technologies I work with:"
+      items:
+        - "Python"
+        - "PyTorch / OpenCV"
+        - "Computer Vision"
+        - "LLM / VLM"
+        - "Docker / Kubernetes"
+        - "Apache Kafka"
+        - "Kong API Gateway"
+        - "Grafana"
+        - "MySQL / MongoDB"
+        - "Git / CI/CD"
+        - "vLLM"
+        - "C++ (CUDA/OpenMP/MPI)"
+
+  # Experience Section
+  experience:
+    enable: true
+    items:
+      - company: "Garmin Ltd."
+        companyUrl: "https://www.garmin.com"
+        jobs:
+          - name: "AI Software Engineer"
+            date: "Nov 2023 – present"
+            info:
+              content: "Xindian, Taiwan"
+            content: |
+              - **Led Large-Scale AI Deployment** as the primary developer for an organization-wide computer vision platform, scaling and maintaining **200+ active production services**.
+              - **Pioneered GenAI Adoption** by leading VLM/LLM research initiatives, evaluating SOTA models and executing POCs to identify and deploy high-value use cases across the organization.
+              - **Mentored 2 interns** on AI system design and production deployment, while owning the full lifecycle of cross-functional AI infrastructure.
+
+  # Education Section
+  education:
+    enable: true
+    index: false
+    items:
+      - title: "Master's Degree in Electrical Engineering"
+        school:
+          name: "National Tsing Hua University (NTHU), Hsinchu, Taiwan"
+          url: "https://www.nthu.edu.tw/"
+        date: "Jul 2020 – Jul 2022"
+        content: |-
+          Advised by [Prof. Min Sun](https://aliensunmin.github.io/) at the Vision Science Lab (VSLab).
+
+          Research in computer vision, resulting in a publication at **IEEE ICRA 2021**:
+          - [Robust 360-8PA: Redesigning the Normalized 8-point Algorithm for 360-FoV Images](https://arxiv.org/abs/2104.10900)
+        featuredLink:
+          enable: true
+          name: "VSLab"
+          url: "https://aliensunmin.github.io/lab/info.html"
+
+      - title: "Bachelor's Degree in Bio-Industrial Mechatronics Engineering"
+        school:
+          name: "National Chung Hsing University (NCHU), Taichung, Taiwan"
+          url: "https://www.nchu.edu.tw/"
+        date: "Sep 2016 – Jun 2020"
+        content: |-
+          Undergraduate researcher at the Precision & Micro Mechatronics Laboratory (PMML), advised by Prof. Yao-Chuan Tsai (Jul 2018 – Jun 2020).
+
+  # Projects Section
+  projects:
+    enable: true
+    items:
+      - title: "Scale-able AI Surveillance & Analytics Platform"
+        content: |
+          Lead Developer & PM at Garmin (Nov 2023 – present).
+          Centralized CV platform ingesting live camera streams across **200+ active services**, digitizing physical facility operations. Built a real-time anomaly detection pipeline publishing alerts via Apache Kafka.
+        image: /assets/img/landing/slam.png
+        badges:
+          - "Python"
+          - "Computer Vision"
+          - "Apache Kafka"
+          - "MySQL"
+          - "MongoDB"
+
+      - title: "AI-Powered Document Inspection System"
+        content: |
+          Sole Developer & PM at Garmin (Mar 2024 – present).
+          Automated document verification pipeline combining OCR and computer vision image comparison, **reducing manual inspection time by 90%**. Designed a human-in-the-loop review process for flagged anomalies.
+        image: /assets/img/landing/slam.png
+        badges:
+          - "Python"
+          - "OCR"
+          - "Computer Vision"
+          - "Automation"
+
+      - title: "Enterprise VLM/LLM Research & API Governance"
+        content: |
+          AI Researcher & Platform Owner at Garmin (Nov 2023 – present).
+          Continuously evaluated SOTA models through structured POCs. Administered the internal GenAI API platform via Kong Gateway and established observability via Grafana dashboards.
+        image: /assets/img/landing/slam.png
+        badges:
+          - "LLM"
+          - "VLM"
+          - "vLLM"
+          - "Kong Gateway"
+          - "Grafana"
+
+      - title: "Robust 360-8PA (ICRA 2021)"
+        content: |
+          Redesigning the normalized 8-point algorithm for 360° FoV images.
+          Published at **IEEE International Conference on Robotics and Automation (ICRA), 2021**.
+        image: /assets/img/landing/slam.png
+        featured:
+          name: "arXiv"
+          link: https://arxiv.org/abs/2104.10900
+        badges:
+          - "Computer Vision"
+          - "Python"
+          - "Research"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/Stanleyluuuu
+
+  # Contact Section
+  contact:
+    enable: true
+    content: "My inbox is always open. Feel free to reach out for collaborations, opportunities, or just to say hi!"
+    btnName: "Email Me"
+    btnLink: "mailto:stanley860920@gmail.com"
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Recent Posts
+      enable: false
+      disableFeaturedImage: false
+    socialNetworks:
+      github: https://github.com/Stanleyluuuu
+      linkedin: https://www.linkedin.com/in/kuan-wei-lu-8594ab202
+
+  listPages:
+    disableFeaturedImage: false
+
+  singlePages:
+    socialShare: false
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+    tags:
+      openInNewTab: true
+
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
