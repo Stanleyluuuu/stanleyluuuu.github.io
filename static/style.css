@@ -1,0 +1,155 @@
+/* ============================================================
+   Custom Styles — stanleyluuuu.github.io
+   Fonts loaded via <link> in layouts/partials/head/extensions.html
+   ============================================================ */
+
+/* --- Typography --- */
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+/* --- Hero: reduce full-screen height --- */
+#hero {
+  min-height: 80vh !important;
+  padding-top: 5rem !important;
+  padding-bottom: 3rem !important;
+}
+
+#hero h1 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+#hero h2 {
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+#hero p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+/* Hero image: circular with indigo ring */
+#hero .image img {
+  border-radius: 50% !important;
+  border: 3px solid var(--primary-color) !important;
+  box-shadow: 0 0 0 6px var(--secondary-color),
+              0 16px 48px rgba(67, 56, 202, 0.2) !important;
+}
+
+/* --- Navbar --- */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.04em;
+}
+
+/* --- About: skill pills instead of "▹" bullets --- */
+#about ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+  grid-template-columns: unset;
+}
+
+#about ul li {
+  position: relative;
+  margin-bottom: 0;
+  padding: 4px 14px;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  opacity: 0.9;
+}
+
+#about ul li::before {
+  content: none;
+}
+
+/* --- Projects: no-image cards --- */
+/* Override theme's min-height and border !important for our custom cards */
+#projects .card.project-card-noimg {
+  min-height: unset !important;
+  border: 1px solid var(--secondary-color) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 16px rgba(67, 56, 202, 0.07) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+
+#projects .card.project-card-noimg:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 40px rgba(67, 56, 202, 0.12) !important;
+  border-color: var(--primary-color) !important;
+}
+
+#projects .card.project-card-noimg .card-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+/* --- Experience container --- */
+#experience .experience-container {
+  border-radius: 1rem !important;
+  border: 1px solid var(--secondary-color) !important;
+  box-shadow: 0 4px 24px rgba(67, 56, 202, 0.08) !important;
+}
+
+#experience .nav-item .nav-link.active {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+/* --- Education cards --- */
+#education .card {
+  border: 1px solid transparent !important;
+  box-shadow: 0 4px 24px rgba(67, 56, 202, 0.08) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+
+#education .card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 8px 32px rgba(67, 56, 202, 0.14) !important;
+}
+
+/* --- Badge pills --- */
+.badge {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* --- Footer --- */
+footer {
+  border-top: 1px solid var(--secondary-color);
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -23,22 +23,36 @@ markup:
       unsafe: true
 
 Menus:
-  main:
-    - identifier: blog
-      name: Blog
-      title: Blog posts
-      url: /blogs
-      weight: 1
+  main: []
 
 params:
   title: "Kuan-Wei Lu"
   description: "AI Software Engineer specializing in Computer Vision, LLM/VLM, and MLOps"
-  favicon: "/assets/img/landing/avatar.jpg"
+  favicon: "/assets/img/favicon.ico"
 
   animate: true
 
+  customCSS: true
+
   theme:
     defaultTheme: "light"
+
+  color:
+    textColor: "#1E1B4B"
+    secondaryTextColor: "#4B5563"
+    textLinkColor: "#4338CA"
+    backgroundColor: "#FAFAF8"
+    secondaryBackgroundColor: "#EEF2FF"
+    primaryColor: "#4338CA"
+    secondaryColor: "#F0F0FF"
+    darkmode:
+      textColor: "#E8E7FF"
+      secondaryTextColor: "#A5B4FC"
+      textLinkColor: "#818CF8"
+      backgroundColor: "#0F0E1A"
+      secondaryBackgroundColor: "#1A1830"
+      primaryColor: "#818CF8"
+      secondaryColor: "#1E1B4B"
 
   font:
     fontSize: 1rem
@@ -74,12 +88,12 @@ params:
     image: /assets/img/landing/avatar.jpg
     roundImage: true
     bottomImage:
-      enable: true
+      enable: false
     button:
       enable: true
       name: "Resume"
       url: "/pdf/20260319_CV.pdf"
-      download: true
+      download: false
       newPage: true
     socialLinks:
       fontAwesomeIcons:
@@ -87,9 +101,8 @@ params:
           url: https://github.com/Stanleyluuuu
         - icon: fab fa-linkedin
           url: https://www.linkedin.com/in/kuan-wei-lu-8594ab202
-      customIcons:
-        - icon: /assets/img/landing/avatar.jpg
-          url: "mailto:stanley860920@gmail.com"
+        - icon: fa fa-envelope
+          url: mailto:stanley860920@gmail.com
 
   # About Section
   about:
@@ -171,7 +184,6 @@ params:
         content: |
           Lead Developer & PM at Garmin (Nov 2023 – present).
           Centralized CV platform ingesting live camera streams across **200+ active services**, digitizing physical facility operations. Built a real-time anomaly detection pipeline publishing alerts via Apache Kafka.
-        image: /assets/img/landing/slam.png
         badges:
           - "Python"
           - "Computer Vision"
@@ -183,7 +195,6 @@ params:
         content: |
           Sole Developer & PM at Garmin (Mar 2024 – present).
           Automated document verification pipeline combining OCR and computer vision image comparison, **reducing manual inspection time by 90%**. Designed a human-in-the-loop review process for flagged anomalies.
-        image: /assets/img/landing/slam.png
         badges:
           - "Python"
           - "OCR"
@@ -194,7 +205,6 @@ params:
         content: |
           AI Researcher & Platform Owner at Garmin (Nov 2023 – present).
           Continuously evaluated SOTA models through structured POCs. Administered the internal GenAI API platform via Kong Gateway and established observability via Grafana dashboards.
-        image: /assets/img/landing/slam.png
         badges:
           - "LLM"
           - "VLM"
@@ -206,7 +216,6 @@ params:
         content: |
           Redesigning the normalized 8-point algorithm for 360° FoV images.
           Published at **IEEE International Conference on Robotics and Automation (ICRA), 2021**.
-        image: /assets/img/landing/slam.png
         featured:
           name: "arXiv"
           link: https://arxiv.org/abs/2104.10900

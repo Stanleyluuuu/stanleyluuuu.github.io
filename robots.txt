@@ -1,5 +1,3 @@
----
-title: robots
----
 User-agent: *
-Sitemap: <{{site.url}}/sitemap.xml>
+Allow: /
+Sitemap: https://stanleyluuuu.github.io/sitemap.xml
