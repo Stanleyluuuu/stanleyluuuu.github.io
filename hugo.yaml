@@ -28,7 +28,7 @@ Menus:
 params:
   title: "Kuan-Wei Lu"
   description: "AI Software Engineer specializing in Computer Vision, LLM/VLM, and MLOps"
-  favicon: "/assets/img/favicon.ico"
+  favicon: "/assets/img/cat-favicon.svg"
 
   animate: true
 
