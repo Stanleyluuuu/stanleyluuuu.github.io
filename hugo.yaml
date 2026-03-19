@@ -206,7 +206,7 @@ params:
 
       - title: "Enterprise VLM/LLM Research & API Governance"
         content: |
-          AI Researcher & Platform Owner at Garmin (Nov 2023 – present).
+          AI Researcher & Platform Owner at Garmin (Apr 2024 – present).
           Continuously evaluated SOTA models through structured POCs. Administered the internal GenAI API platform via Kong Gateway and established observability via Grafana dashboards.
         badges:
           - "LLM"

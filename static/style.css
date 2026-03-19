@@ -107,6 +107,10 @@ body.dark #hero h1 {
 }
 
 /* --- Navbar --- */
+.navbar-brand img {
+  vertical-align: middle !important;
+}
+
 nav, .navbar, header nav {
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
