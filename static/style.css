@@ -617,3 +617,130 @@ header .navbar-nav .nav-link:hover::after {
     transform: none !important;
   }
 }
+
+/* ============================================================
+   RESPONSIVE — multi-device adaptations
+   ============================================================ */
+
+/* Prevent any horizontal overflow from animations or wide elements */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Eliminate 300ms tap delay on touch devices */
+a, button, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* ── Mobile portrait (≤ 575px) ──────────────────────────── */
+@media (max-width: 575.98px) {
+  /* Hero: use small-viewport height to avoid mobile browser chrome overlap */
+  #hero {
+    min-height: 100svh !important;
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  #hero p {
+    font-size: 0.95rem;
+  }
+
+  /* Reduce excessive top margin on hero buttons */
+  #hero a.btn {
+    margin-top: 28px !important;
+  }
+
+  /* Experience: scrollable tab row so tabs never wrap to a second line */
+  #experience .experience-container .nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 1px; /* keep active border from being clipped */
+  }
+
+  #experience .experience-container .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  #experience .nav-item .nav-link {
+    white-space: nowrap;
+    font-size: 0.85rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /* Education: stack title + date vertically on narrow screens */
+  .edu-header {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  /* Contact: full-width CTA so it's easy to tap */
+  #contact .btn {
+    display: block;
+    width: 100%;
+  }
+
+  /* Shorter reveal travel distance — less jarring on small screens */
+  .will-reveal {
+    transform: translateY(16px);
+  }
+
+  /* Toast: sit above home-bar on notched phones */
+  #copy-toast {
+    bottom: max(28px, env(safe-area-inset-bottom, 28px));
+  }
+}
+
+/* ── Mobile landscape / small tablet (576px – 767px) ────── */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Keep experience tabs on one scrollable row */
+  #experience .experience-container .nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  #experience .experience-container .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  #experience .nav-item .nav-link {
+    white-space: nowrap;
+  }
+}
+
+/* ── Tablet (768px – 1023px) ─────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  #hero {
+    padding-top: 5.5rem !important;
+  }
+
+  /* Cap avatar size so hero columns stay balanced on tablet */
+  #hero .image img {
+    max-width: 280px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* ── Touch-primary devices: remove hover-only transforms ─── */
+@media (hover: none) and (pointer: coarse) {
+  #about ul li:hover,
+  #education .card:hover,
+  #projects .card.project-card-noimg:hover {
+    transform: none !important;
+    box-shadow: 0 4px 16px var(--accent-glow) !important;
+  }
+
+  .lab-btn:hover {
+    transform: none;
+  }
+
+  /* Slightly larger tap target for social icon buttons */
+  #hero a.btn.social-icon {
+    padding: 0.85rem !important;
+  }
+}

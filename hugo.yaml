@@ -91,7 +91,7 @@ params:
     button:
       enable: true
       name: "Resume"
-      url: "/pdf/20260319_CV.pdf"
+      url: "/pdf/20260320_CV.pdf"
       download: false
       newPage: true
     socialLinks:
