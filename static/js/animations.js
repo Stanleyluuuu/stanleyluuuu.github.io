@@ -8,8 +8,8 @@
 
   /* Developer console easter egg */
   if (window.console && console.log) {
-    console.log('%c  Hi there!  ', 'background:#4338CA;color:#F5F4FF;font-size:16px;font-weight:700;padding:6px 16px;border-radius:4px;');
-    console.log('%c Kuan-Wei Lu — AI Software Engineer @ Garmin', 'color:#4338CA;font-size:13px;font-weight:600;');
+    console.log('%c  Hi there!  ', 'background:#2563EB;color:#F5F4FF;font-size:16px;font-weight:700;padding:6px 16px;border-radius:4px;');
+    console.log('%c Kuan-Wei Lu — AI Software Engineer @ Garmin', 'color:#2563EB;font-size:13px;font-weight:600;');
     console.log('%c stanley860920@gmail.com  ·  github.com/Stanleyluuuu', 'color:#6B7280;font-size:11px;');
     console.log('%c Like what you see? Let\'s connect.', 'color:#6B7280;font-style:italic;font-size:11px;');
   }
@@ -20,6 +20,8 @@
     if (!t) {
       t = document.createElement('div');
       t.id = 'copy-toast';
+      t.setAttribute('role', 'status');
+      t.setAttribute('aria-live', 'polite');
       document.body.appendChild(t);
     }
     t.textContent = msg;
@@ -51,17 +53,23 @@
     bar.style.width = (total > 0 ? (window.scrollY / total) * 100 : 0) + '%';
   }, { passive: true });
 
-  /* ── Hero h1 title fade-in (no typewriter since subtitle removed) ── */
-  var h1 = document.querySelector('#hero h1');
-  if (h1 && !h1.style.opacity) {
-    h1.style.transition = 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
-    h1.style.opacity = '0';
-    h1.style.transform = 'translateY(12px)';
+  /* ── Hero entrance: h1 → h2 → p → buttons staggered ── */
+  [
+    { sel: '#hero h1',                   delay: 200, dy: 12 },
+    { sel: '#hero h2',                   delay: 380, dy: 8  },
+    { sel: '#hero p',                    delay: 520, dy: 8  },
+    { sel: '#hero .mt-4, #hero .mt-3',   delay: 650, dy: 6  },
+  ].forEach(function (item) {
+    var el = document.querySelector(item.sel);
+    if (!el || el.style.opacity) return;
+    el.style.transition = 'opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1)';
+    el.style.opacity   = '0';
+    el.style.transform = 'translateY(' + item.dy + 'px)';
     setTimeout(function () {
-      h1.style.opacity = '1';
-      h1.style.transform = 'translateY(0)';
-    }, 200);
-  }
+      el.style.opacity   = '1';
+      el.style.transform = 'translateY(0)';
+    }, item.delay);
+  });
 
   /* ── Scroll reveal helper ── */
   function makeRevealObserver(options) {
@@ -73,6 +81,24 @@
         }
       });
     }, options);
+  }
+
+  /* ── Skill pill stagger when About scrolls in ── */
+  var skillList = document.querySelector('#about ul');
+  if (skillList) {
+    skillList.querySelectorAll('li').forEach(function (pill) {
+      pill.classList.add('will-reveal');
+    });
+    new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('li').forEach(function (pill, i) {
+          pill.style.setProperty('--stagger', i);
+          setTimeout(function () { pill.classList.add('did-reveal'); }, i * 45);
+        });
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 }).observe(skillList);
   }
 
   /* Stagger cards within their row, then observe */

@@ -9,7 +9,7 @@
 :root {
   --bg-base:    #ffffff;
   --bg-surface: #f8faff;
-  --bg-raised:  #eef4ff;
+  --bg-raised:  #EFF6FF;   /* matches blue-50, used for alternating sections */
 
   --border-subtle:  rgba(37, 99, 235, 0.08);
   --border-default: rgba(37, 99, 235, 0.14);
@@ -29,9 +29,10 @@ body.dark {
   --border-default: rgba(255, 255, 255, 0.10);
   --border-accent:  rgba(99, 179, 237, 0.28);
 
-  --accent:       #4299e1;
-  --accent-light: #63b3ed;
-  --accent-glow:  rgba(66, 153, 225, 0.14);
+  /* Aligned with theme's dark --primary-color (#60A5FA) for token consistency */
+  --accent:       #60A5FA;
+  --accent-light: #93C5FD;
+  --accent-glow:  rgba(96, 165, 250, 0.14);
 }
 
 /* --- Typography --- */
@@ -51,6 +52,18 @@ code, pre, .tech-tag {
   font-family: 'DM Mono', monospace;
 }
 
+/* --- Keyboard focus: accessible outline for all interactive elements --- */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 3px !important;
+  border-radius: 3px;
+}
+
 /* --- Hero --- */
 #hero {
   min-height: 80vh !important;
@@ -64,11 +77,7 @@ code, pre, .tech-tag {
 }
 
 body.dark #hero h1 {
-  background: linear-gradient(135deg, #ffffff 0%, #90cdf4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 36px rgba(66, 153, 225, 0.28));
+  color: #F8FAFC;
 }
 
 #hero h2 {
@@ -77,7 +86,7 @@ body.dark #hero h1 {
 }
 
 #hero p {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 1.05rem;
   line-height: 1.75;
   max-width: 560px;
@@ -112,8 +121,8 @@ body.dark #hero h1 {
 }
 
 nav, .navbar, header nav {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
 }
 
 body.dark nav,
@@ -127,6 +136,11 @@ body.dark header nav {
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: -0.04em;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-brand:hover {
+  opacity: 0.7;
 }
 
 /* Theme toggle: vertically center with nav links */
@@ -150,18 +164,13 @@ body.dark header nav {
           → Projects(blue-tint) → Education(white) → Contact(blue-tint)
    ============================================================ */
 
-#about      { background-color: #EFF6FF !important; }
-#experience { background-color: #ffffff !important; }
-#projects   { background-color: #EFF6FF !important; }
-#education  { background-color: #ffffff !important; }
-#contact    { background-color: #EFF6FF !important; }
+#about      { background-color: var(--bg-raised) !important; }
+#experience { background-color: var(--bg-base)   !important; }
+#projects   { background-color: var(--bg-raised) !important; }
+#education  { background-color: var(--bg-base)   !important; }
+#contact    { background-color: var(--bg-raised) !important; }
 
-/* Dark mode overrides — layered depth with new colour system */
-body.dark #about      { background-color: var(--bg-surface) !important; }
-body.dark #experience { background-color: var(--bg-base)    !important; }
-body.dark #projects   { background-color: var(--bg-surface) !important; }
-body.dark #education  { background-color: var(--bg-base)    !important; }
-body.dark #contact    { background-color: var(--bg-surface) !important; }
+/* Dark mode: --bg-raised resolves to #1c2333, --bg-base to #0d1117 — handled by tokens above */
 
 /* ============================================================
    ABOUT — skill pills
@@ -211,11 +220,17 @@ body.dark #contact    { background-color: var(--bg-surface) !important; }
   border-color: var(--primary-color);
 }
 
-/* Infrastructure skills (5–8): filled sky-blue */
+/* Infrastructure skills (5–8): teal — visually distinct from AI/ML blue */
 #about ul li:nth-child(n+5):nth-child(-n+8) {
-  background-color: #0369A1;
-  color: #F0F9FF;
-  border-color: #0369A1;
+  background-color: #0F766E;
+  color: #F0FDFA;
+  border-color: #0F766E;
+}
+
+body.dark #about ul li:nth-child(n+5):nth-child(-n+8) {
+  background-color: #0D9488;
+  color: #F0FDFA;
+  border-color: #0D9488;
 }
 
 /* Remaining (9+): outline */
@@ -226,9 +241,9 @@ body.dark #contact    { background-color: var(--bg-surface) !important; }
 }
 
 #about ul li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
-  opacity: 0.88;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.22);
+  opacity: 0.92;
 }
 
 /* ============================================================
@@ -243,7 +258,6 @@ body.dark #contact    { background-color: var(--bg-surface) !important; }
   background: var(--bg-surface);
   box-shadow: 0 4px 16px var(--accent-glow) !important;
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
-  will-change: transform;
   position: relative;
   overflow: hidden;
 }
@@ -280,22 +294,51 @@ body.dark #contact    { background-color: var(--bg-surface) !important; }
     0 2px 8px var(--accent-glow) !important;
 }
 
-/* Badge chips */
-#projects .row .col-lg-6:nth-child(1) .badge {
+/* Badge chips — all enterprise projects */
+#projects .badge {
   background-color: #DBEAFE !important;
   color: #1D4ED8 !important;
 }
-#projects .row .col-lg-6:nth-child(2) .badge {
-  background-color: #DBEAFE !important;
-  color: #1D4ED8 !important;
+
+body.dark #projects .badge {
+  background-color: rgba(59, 130, 246, 0.16) !important;
+  color: #93C5FD !important;
 }
-#projects .row .col-lg-6:nth-child(3) .badge {
-  background-color: #DBEAFE !important;
-  color: #1D4ED8 !important;
+
+/* ICRA 2021 research project (card 4) — amber accent for academic distinction */
+#projects .row .col-lg-6:nth-child(4) .card.project-card-noimg {
+  border-left-color: #D97706 !important;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.10) !important;
 }
+
+#projects .row .col-lg-6:nth-child(4) .card.project-card-noimg:hover {
+  border-left-color: #B45309 !important;
+  box-shadow:
+    0 0 0 1px rgba(217, 119, 6, 0.08),
+    0 12px 40px rgba(0, 0, 0, 0.18),
+    0 2px 8px rgba(217, 119, 6, 0.12) !important;
+}
+
 #projects .row .col-lg-6:nth-child(4) .badge {
-  background-color: #DBEAFE !important;
-  color: #1D4ED8 !important;
+  background-color: #FEF3C7 !important;
+  color: #92400E !important;
+}
+
+body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg {
+  border-left-color: #F59E0B !important;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.12) !important;
+}
+
+body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg:hover {
+  box-shadow:
+    0 0 0 1px rgba(245, 158, 11, 0.08),
+    0 12px 40px rgba(0, 0, 0, 0.28),
+    0 2px 8px rgba(245, 158, 11, 0.14) !important;
+}
+
+body.dark #projects .row .col-lg-6:nth-child(4) .badge {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+  color: #FCD34D !important;
 }
 
 /* ============================================================
@@ -420,6 +463,9 @@ body.dark footer {
 footer a[href*="github"]:hover   { color: #24292F !important; }
 footer a[href*="linkedin"]:hover { color: #0A66C2 !important; }
 
+body.dark footer a[href*="github"]:hover   { color: #e6edf3 !important; }
+body.dark footer a[href*="linkedin"]:hover { color: #5B9BD5 !important; }
+
 /* ============================================================
    TECH TAGS — monospace pill with accent border
    ============================================================ */
@@ -444,10 +490,15 @@ footer a[href*="linkedin"]:hover { color: #0A66C2 !important; }
    DELIGHT
    ============================================================ */
 
-/* Hero: subtle dot-grid background */
+/* Hero: very subtle dot-grid background */
 #hero {
-  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.10) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
   background-size: 28px 28px;
+}
+
+/* Dark mode: white dots so texture stays visible on dark bg */
+body.dark #hero {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
 /* "Live" pulsing green dot on the first experience nav tab (current role) */
@@ -472,9 +523,9 @@ footer a[href*="linkedin"]:hover { color: #0A66C2 !important; }
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%) translateY(12px);
-  background: #1E1B4B;
-  color: #F5F4FF;
-  font-family: 'Inter', sans-serif;
+  background: #1E293B;
+  color: #F1F5F9;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
   padding: 10px 20px;
@@ -528,7 +579,12 @@ footer a[href*="linkedin"]:hover { color: #0A66C2 !important; }
   transform: translateY(0);
 }
 
-/* Hero image: subtle float loop */
+/* Hero image: fade-in + float loop */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 @keyframes avatar-float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-8px); }
@@ -723,6 +779,33 @@ a, button, [role="button"] {
     max-width: 280px;
     margin: 0 auto;
     display: block;
+  }
+}
+
+/* ── Print: clean readable output for recruiters ─────────── */
+@media print {
+  header, footer, #scroll-progress, #hero a.btn.social-icon { display: none !important; }
+
+  #hero, #about, #projects, #education, #experience, #contact {
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .will-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #hero a.btn:not(.social-icon) {
+    border: 1px solid #2563EB !important;
+    background: transparent !important;
+    color: #2563EB !important;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.72em;
+    color: #64748b;
   }
 }
 

@@ -83,7 +83,7 @@ params:
     title: "Stanley."
     content: |-
       AI Software Engineer at Garmin Ltd., leading large-scale computer vision and GenAI platforms.
-      Passionate about LLM/VLM research, MLOps, and deploying cutting-edge AI into production.
+      I build LLM/VLM systems, design MLOps pipelines, and ship AI from research into production.
     image: /assets/img/landing/avatar.jpg
     roundImage: true
     bottomImage:
@@ -111,7 +111,7 @@ params:
     content: |-
       I am an **AI Software Engineer at Garmin Ltd.** (Nov 2023 – present), where I lead the development of an organization-wide computer vision platform scaling across **200+ active production services**.
 
-      I pioneer GenAI adoption by evaluating SOTA LLM/VLM models, executing proof-of-concepts, and driving enterprise deployment of high-value AI use cases. I also mentor interns on AI system design and own the full lifecycle of cross-functional AI infrastructure.
+      I lead GenAI adoption by evaluating state-of-the-art LLM/VLM models, running proof-of-concepts, and deploying high-value AI use cases across the organization. I also mentor interns on AI system design and oversee cross-functional AI infrastructure end-to-end.
 
       Previously, I completed my **Master's in Electrical Engineering at NTHU**, conducting research in computer vision under Prof. Min Sun, which resulted in a publication at **ICRA 2021**.
     skills:
@@ -144,8 +144,8 @@ params:
               content: "Xindian, Taiwan"
             content: |
               - **Led Large-Scale AI Deployment** as the primary developer for an organization-wide computer vision platform, scaling and maintaining **200+ active production services**.
-              - **Pioneered GenAI Adoption** by leading VLM/LLM research initiatives, evaluating SOTA models and executing POCs to identify and deploy high-value use cases across the organization.
-              - **Mentored 2 interns** on AI system design and production deployment, while owning the full lifecycle of cross-functional AI infrastructure.
+              - **Led GenAI Adoption** by evaluating state-of-the-art LLM/VLM models through structured proof-of-concepts to identify and deploy high-value use cases across the organization.
+              - **Mentored 2 interns** on AI system design and production deployment, while managing the full lifecycle of cross-functional AI infrastructure.
 
   # Education Section
   education:
@@ -183,10 +183,10 @@ params:
   projects:
     enable: true
     items:
-      - title: "Scale-able AI Surveillance & Analytics Platform"
+      - title: "Scalable AI Surveillance & Analytics Platform"
         content: |
           Lead Developer & PM at Garmin (Nov 2023 – present).
-          Centralized CV platform ingesting live camera streams across **200+ active services**, digitizing physical facility operations. Built a real-time anomaly detection pipeline publishing alerts via Apache Kafka.
+          Centralized CV platform ingesting live camera streams across **200+ active services**, automating monitoring of physical facility operations. Built a real-time anomaly detection pipeline publishing alerts via Apache Kafka.
         badges:
           - "Python"
           - "Computer Vision"
@@ -207,7 +207,7 @@ params:
       - title: "Enterprise VLM/LLM Research & API Governance"
         content: |
           AI Researcher & Platform Owner at Garmin (Apr 2024 – present).
-          Continuously evaluated SOTA models through structured POCs. Administered the internal GenAI API platform via Kong Gateway and established observability via Grafana dashboards.
+          Continuously evaluated state-of-the-art models through structured proof-of-concepts. Administered the internal GenAI API platform via Kong Gateway and established observability via Grafana dashboards.
         badges:
           - "LLM"
           - "VLM"
@@ -233,7 +233,7 @@ params:
   # Contact Section
   contact:
     enable: true
-    content: "My inbox is always open. Feel free to reach out for collaborations, opportunities, or just to say hi!"
+    content: "Open to new opportunities, research collaborations, and technical conversations. Drop me a line."
     btnName: "Email Me"
     btnLink: "mailto:stanley860920@gmail.com"
 
