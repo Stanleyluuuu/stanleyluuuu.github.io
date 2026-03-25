@@ -801,6 +801,83 @@ a, button, [role="button"] {
   }
 }
 
+/* ── Small desktop / iPad Pro landscape (1024px – 1199px) ── */
+@media (min-width: 1024px) and (max-width: 1199.98px) {
+  #hero {
+    padding-top: 5.5rem !important;
+  }
+
+  /* Contain avatar so it doesn't overpower the text column */
+  #hero .image img {
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* ── Large desktop (≥ 1200px) ────────────────────────────── */
+@media (min-width: 1200px) {
+  #hero {
+    padding-top: 7rem !important;
+    min-height: 85vh !important;
+  }
+}
+
+/* ── Ultra-wide (≥ 1400px) ───────────────────────────────── */
+@media (min-width: 1400px) {
+  #hero {
+    padding-top: 8rem !important;
+  }
+
+  /* Give hero body copy a little more breathing room at full width */
+  #hero p {
+    max-width: 600px;
+    font-size: 1.08rem;
+  }
+}
+
+/* ── Very small phones (≤ 360px: iPhone SE 1st-gen, narrow Androids) ── */
+@media (max-width: 360px) {
+  /* Hero title can be too wide — scale down to keep it on 2 lines max */
+  #hero h1 {
+    font-size: 1.9rem !important;
+  }
+
+  /* Skill pills: tighter padding so they wrap cleanly without overflow */
+  #about ul {
+    gap: 6px 8px;
+  }
+
+  #about ul li {
+    font-size: 0.77rem;
+    padding: 3px 10px;
+  }
+
+  /* Badge text in project cards: prevent any individual badge from forcing a layout break */
+  #projects .badge {
+    font-size: 0.7rem !important;
+    padding: 0.25em 0.5em !important;
+  }
+}
+
+/* ── Landscape phone (short viewport height ≤ 500px) ─────── */
+/* Covers: iPhone SE landscape (568×320), iPhone 12/13/14 landscape (844×390), etc. */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* Don't force a min-height — let the hero be as tall as its content needs */
+  #hero {
+    min-height: auto !important;
+    padding-top: 5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Keep avatar from dominating in the short viewport */
+  #hero .image img {
+    max-width: 160px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
 /* ── Print: clean readable output for recruiters ─────────── */
 @media print {
   header, footer, #scroll-progress, #hero a.btn.social-icon { display: none !important; }
