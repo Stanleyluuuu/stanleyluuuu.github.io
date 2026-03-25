@@ -35,6 +35,12 @@ body.dark {
   --accent-glow:  rgba(96, 165, 250, 0.14);
 }
 
+/* --- Scroll: smooth + clear fixed navbar on anchor jumps --- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
 /* --- Typography --- */
 body {
   font-family: 'DM Sans', system-ui, sans-serif;
@@ -260,6 +266,7 @@ body.dark #about ul li:nth-child(n+5):nth-child(-n+8) {
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 #projects .card.project-card-noimg::before {
@@ -390,6 +397,7 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
   box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08) !important;
   border-radius: 12px !important;
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
+  cursor: pointer;
 }
 
 #education .card:hover {
@@ -472,18 +480,28 @@ body.dark footer a[href*="linkedin"]:hover { color: #5B9BD5 !important; }
 .tech-tag {
   background: rgba(37, 99, 235, 0.10) !important;
   border: 1px solid rgba(37, 99, 235, 0.22) !important;
-  color: var(--accent-light) !important;
+  color: #1D4ED8 !important;           /* WCAG AA: ~6:1 on light bg; was --accent-light (~2.1:1 fail) */
   border-radius: 6px !important;
   padding: 0.2rem 0.65rem !important;
   font-size: 0.75rem !important;
   font-weight: 500 !important;
   letter-spacing: 0.03em;
-  transition: background 0.2s, border-color 0.2s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+/* Dark mode: restore light color — #1D4ED8 fails on dark bg */
+body.dark .tech-tag {
+  color: var(--accent-light) !important;
 }
 
 .tech-tag:hover {
   background: rgba(37, 99, 235, 0.18) !important;
   border-color: rgba(37, 99, 235, 0.4) !important;
+  color: #1E3A8A !important;
+}
+
+body.dark .tech-tag:hover {
+  color: #BAE6FD !important;
 }
 
 /* ============================================================
@@ -553,9 +571,9 @@ body.dark #hero {
   left: 0;
   height: 3px;
   width: 0%;
-  background: var(--primary-color);
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
   z-index: 9999;
-  transition: width 0.1s linear;
+  transition: width 0.06s linear;
   pointer-events: none;
 }
 
@@ -591,6 +609,7 @@ body.dark #hero {
 }
 
 #hero .image.animate img {
+  will-change: transform;
   animation:
     fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1),
     avatar-float 4s 0.9s ease-in-out infinite;
