@@ -38,13 +38,13 @@ params:
     defaultTheme: "light"
 
   color:
-    textColor: "#0F172A"
-    secondaryTextColor: "#475569"
-    textLinkColor: "#2563EB"
-    backgroundColor: "#ffffff"
-    secondaryBackgroundColor: "#EFF6FF"
-    primaryColor: "#2563EB"
-    secondaryColor: "#EFF6FF"
+    textColor: "#040204"
+    secondaryTextColor: "#5A5048"
+    textLinkColor: "#466CA6"
+    backgroundColor: "#FDFAF6"
+    secondaryBackgroundColor: "#EDE6DA"
+    primaryColor: "#466CA6"
+    secondaryColor: "#EDE6DA"
     darkmode:
       textColor: "#F1F5F9"
       secondaryTextColor: "#94A3B8"

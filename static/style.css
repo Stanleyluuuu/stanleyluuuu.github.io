@@ -5,19 +5,26 @@
 
 /* ============================================================
    CSS CUSTOM PROPERTIES — colour system
+   Palette: Warm Beige · Steel Blue · Gold · Crimson · Near-Black
    ============================================================ */
 :root {
-  --bg-base:    #ffffff;
-  --bg-surface: #f8faff;
-  --bg-raised:  #EFF6FF;   /* matches blue-50, used for alternating sections */
+  --bg-base:    #FDFAF6;
+  --bg-surface: #F5F0E8;
+  --bg-raised:  #EDE6DA;   /* warm beige, alternating sections */
 
-  --border-subtle:  rgba(37, 99, 235, 0.08);
-  --border-default: rgba(37, 99, 235, 0.14);
-  --border-accent:  rgba(99, 179, 237, 0.35);
+  --border-subtle:  rgba(70, 108, 166, 0.08);
+  --border-default: rgba(70, 108, 166, 0.14);
+  --border-accent:  rgba(107, 141, 196, 0.35);
 
-  --accent:       #2563EB;
-  --accent-light: #60A5FA;
-  --accent-glow:  rgba(37, 99, 235, 0.12);
+  --accent:       #466CA6;
+  --accent-light: #6B8DC4;
+  --accent-glow:  rgba(70, 108, 166, 0.12);
+
+  /* Gold + Crimson — used for special accents */
+  --gold:         #C9A32B;
+  --gold-glow:    rgba(201, 163, 43, 0.12);
+  --crimson:      #87240E;
+  --crimson-glow: rgba(135, 36, 14, 0.10);
 }
 
 body.dark {
@@ -98,26 +105,26 @@ body.dark #hero h1 {
   max-width: 560px;
 }
 
-/* Hero image: circular with blue ring */
+/* Hero image: circular with steel-blue ring */
 #hero .image img {
   border-radius: 50% !important;
   border: 3px solid var(--primary-color) !important;
   box-shadow: 0 0 0 6px var(--secondary-color),
-              0 16px 48px rgba(37, 99, 235, 0.2) !important;
+              0 16px 48px rgba(70, 108, 166, 0.20) !important;
 }
 
 /* Hero Resume button: filled blue, vertically aligned with social icons */
 #hero a.btn:not(.social-icon) {
   background-color: var(--primary-color) !important;
-  color: #FAFAF8 !important;
+  color: #FAF7F2 !important;
   border-color: var(--primary-color) !important;
   font-weight: 600;
   vertical-align: middle !important;
 }
 
 #hero a.btn:not(.social-icon):hover {
-  background-color: #1D4ED8 !important;
-  color: #FAFAF8 !important;
+  background-color: #365885 !important;
+  color: #FAF7F2 !important;
   opacity: 1 !important;
 }
 
@@ -166,8 +173,8 @@ body.dark header nav {
 
 /* ============================================================
    SECTION BACKGROUNDS — light mode alternation
-   Order: Hero(white) → About(blue-tint) → Experience(white)
-          → Projects(blue-tint) → Education(white) → Contact(blue-tint)
+   Order: Hero(warm white) → About(beige) → Experience(warm white)
+          → Projects(beige) → Education(warm white) → Contact(beige)
    ============================================================ */
 
 #about      { background-color: var(--bg-raised) !important; }
@@ -219,18 +226,18 @@ body.dark header nav {
 
 #about ul li::before { content: none; }
 
-/* Core AI/ML skills (1–4): filled primary blue */
+/* Core AI/ML skills (1–4): filled steel blue */
 #about ul li:nth-child(-n+4) {
   background-color: var(--primary-color);
-  color: #F0F9FF;
+  color: #FAF7F2;
   border-color: var(--primary-color);
 }
 
-/* Infrastructure skills (5–8): teal — visually distinct from AI/ML blue */
+/* Infrastructure skills (5–8): gold — warm contrast from steel blue */
 #about ul li:nth-child(n+5):nth-child(-n+8) {
-  background-color: #0F766E;
-  color: #F0FDFA;
-  border-color: #0F766E;
+  background-color: #C9A32B;
+  color: #FAF7F2;
+  border-color: #C9A32B;
 }
 
 body.dark #about ul li:nth-child(n+5):nth-child(-n+8) {
@@ -248,8 +255,13 @@ body.dark #about ul li:nth-child(n+5):nth-child(-n+8) {
 
 #about ul li:hover {
   transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.22);
+  box-shadow: 0 4px 12px rgba(70, 108, 166, 0.22);
   opacity: 0.92;
+}
+
+/* Golden pill hover: slightly different shadow hue */
+#about ul li:nth-child(n+5):nth-child(-n+8):hover {
+  box-shadow: 0 4px 12px rgba(201, 163, 43, 0.28);
 }
 
 /* ============================================================
@@ -274,7 +286,7 @@ body.dark #about ul li:nth-child(n+5):nth-child(-n+8) {
   position: absolute;
   inset: 0;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(66, 153, 225, 0.04) 0%, transparent 55%);
+  background: linear-gradient(135deg, rgba(70, 108, 166, 0.04) 0%, transparent 55%);
   pointer-events: none;
 }
 
@@ -296,15 +308,15 @@ body.dark #about ul li:nth-child(n+5):nth-child(-n+8) {
   transform: translateY(-4px) !important;
   border-color: var(--border-accent) !important;
   box-shadow:
-    0 0 0 1px rgba(99, 179, 237, 0.08),
-    0 12px 40px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(107, 141, 196, 0.08),
+    0 12px 40px rgba(0, 0, 0, 0.16),
     0 2px 8px var(--accent-glow) !important;
 }
 
 /* Badge chips — all enterprise projects */
 #projects .badge {
-  background-color: #DBEAFE !important;
-  color: #1D4ED8 !important;
+  background-color: rgba(70, 108, 166, 0.10) !important;
+  color: #365885 !important;
 }
 
 body.dark #projects .badge {
@@ -312,40 +324,40 @@ body.dark #projects .badge {
   color: #93C5FD !important;
 }
 
-/* ICRA 2021 research project (card 4) — amber accent for academic distinction */
+/* ICRA 2021 research project (card 4) — crimson accent for academic distinction */
 #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg {
-  border-left-color: #D97706 !important;
-  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.10) !important;
+  border-left-color: #87240E !important;
+  box-shadow: 0 4px 16px rgba(135, 36, 14, 0.10) !important;
 }
 
 #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg:hover {
-  border-left-color: #B45309 !important;
+  border-left-color: #6E1D0B !important;
   box-shadow:
-    0 0 0 1px rgba(217, 119, 6, 0.08),
+    0 0 0 1px rgba(135, 36, 14, 0.08),
     0 12px 40px rgba(0, 0, 0, 0.18),
-    0 2px 8px rgba(217, 119, 6, 0.12) !important;
+    0 2px 8px rgba(135, 36, 14, 0.12) !important;
 }
 
 #projects .row .col-lg-6:nth-child(4) .badge {
-  background-color: #FEF3C7 !important;
-  color: #92400E !important;
+  background-color: rgba(135, 36, 14, 0.09) !important;
+  color: #87240E !important;
 }
 
 body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg {
-  border-left-color: #F59E0B !important;
-  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.12) !important;
+  border-left-color: #C4503A !important;
+  box-shadow: 0 4px 16px rgba(196, 80, 58, 0.14) !important;
 }
 
 body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg:hover {
   box-shadow:
-    0 0 0 1px rgba(245, 158, 11, 0.08),
+    0 0 0 1px rgba(196, 80, 58, 0.08),
     0 12px 40px rgba(0, 0, 0, 0.28),
-    0 2px 8px rgba(245, 158, 11, 0.14) !important;
+    0 2px 8px rgba(196, 80, 58, 0.14) !important;
 }
 
 body.dark #projects .row .col-lg-6:nth-child(4) .badge {
-  background-color: rgba(245, 158, 11, 0.15) !important;
-  color: #FCD34D !important;
+  background-color: rgba(196, 80, 58, 0.15) !important;
+  color: #E8937F !important;
 }
 
 /* ============================================================
@@ -394,7 +406,7 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
 #education .card {
   border: 1px solid var(--border-subtle) !important;
   background: var(--bg-surface);
-  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08) !important;
+  box-shadow: 0 4px 24px rgba(70, 108, 166, 0.08) !important;
   border-radius: 12px !important;
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
   cursor: pointer;
@@ -404,8 +416,8 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
   transform: translateY(-3px);
   border-color: var(--border-accent) !important;
   box-shadow:
-    0 0 0 1px rgba(99, 179, 237, 0.08),
-    0 8px 32px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(107, 141, 196, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.14),
     0 2px 8px var(--accent-glow) !important;
 }
 
@@ -419,22 +431,22 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
   align-items: center;
   gap: 0.375rem;
   padding: 0.3rem 0.85rem;
-  border: 1px solid rgba(99, 179, 237, 0.35);
+  border: 1px solid rgba(107, 141, 196, 0.35);
   border-radius: 9999px;
   font-size: 0.78rem;
   font-weight: 500;
   font-family: 'DM Mono', monospace;
-  color: #4299e1;
-  background: rgba(99, 179, 237, 0.07);
+  color: #5A80B8;
+  background: rgba(107, 141, 196, 0.07);
   text-decoration: none;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
   letter-spacing: 0.02em;
 }
 
 .lab-btn:hover {
-  background: rgba(99, 179, 237, 0.16);
-  border-color: rgba(99, 179, 237, 0.6);
-  color: #63b3ed;
+  background: rgba(107, 141, 196, 0.16);
+  border-color: rgba(107, 141, 196, 0.60);
+  color: #466CA6;
   transform: translateY(-1px);
   text-decoration: none;
 }
@@ -445,14 +457,14 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
 
 #contact .btn {
   background-color: var(--primary-color) !important;
-  color: #F0F9FF !important;
+  color: #FAF7F2 !important;
   border-color: var(--primary-color) !important;
   font-weight: 600;
   padding: 0.65rem 2rem !important;
 }
 
 #contact .btn:hover {
-  background-color: #1D4ED8 !important;
+  background-color: #365885 !important;
   opacity: 1 !important;
 }
 
@@ -478,9 +490,9 @@ body.dark footer a[href*="linkedin"]:hover { color: #5B9BD5 !important; }
    TECH TAGS — monospace pill with accent border
    ============================================================ */
 .tech-tag {
-  background: rgba(37, 99, 235, 0.10) !important;
-  border: 1px solid rgba(37, 99, 235, 0.22) !important;
-  color: #1D4ED8 !important;           /* WCAG AA: ~6:1 on light bg; was --accent-light (~2.1:1 fail) */
+  background: rgba(70, 108, 166, 0.10) !important;
+  border: 1px solid rgba(70, 108, 166, 0.22) !important;
+  color: #365885 !important;           /* WCAG AA on warm-white bg */
   border-radius: 6px !important;
   padding: 0.2rem 0.65rem !important;
   font-size: 0.75rem !important;
@@ -489,15 +501,15 @@ body.dark footer a[href*="linkedin"]:hover { color: #5B9BD5 !important; }
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
-/* Dark mode: restore light color — #1D4ED8 fails on dark bg */
+/* Dark mode: restore light color */
 body.dark .tech-tag {
   color: var(--accent-light) !important;
 }
 
 .tech-tag:hover {
-  background: rgba(37, 99, 235, 0.18) !important;
-  border-color: rgba(37, 99, 235, 0.4) !important;
-  color: #1E3A8A !important;
+  background: rgba(70, 108, 166, 0.18) !important;
+  border-color: rgba(70, 108, 166, 0.40) !important;
+  color: #2A4570 !important;
 }
 
 body.dark .tech-tag:hover {
@@ -510,7 +522,7 @@ body.dark .tech-tag:hover {
 
 /* Hero: very subtle dot-grid background */
 #hero {
-  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(70, 108, 166, 0.05) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -541,8 +553,8 @@ body.dark #hero {
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%) translateY(12px);
-  background: #1E293B;
-  color: #F1F5F9;
+  background: #2A2218;
+  color: #F1EDE5;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
@@ -893,9 +905,9 @@ a, button, [role="button"] {
   }
 
   #hero a.btn:not(.social-icon) {
-    border: 1px solid #2563EB !important;
+    border: 1px solid #466CA6 !important;
     background: transparent !important;
-    color: #2563EB !important;
+    color: #466CA6 !important;
   }
 
   a[href^="http"]::after {
