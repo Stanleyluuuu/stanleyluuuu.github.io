@@ -28,18 +28,24 @@
 }
 
 body.dark {
-  --bg-base:    #17120F;   /* warm charcoal black */
-  --bg-surface: #201812;   /* dark warm brown — cards, panels */
-  --bg-raised:  #2A201A;   /* medium warm brown — alternating sections */
+  --bg-base:    #1c1a16;   /* warm sand black */
+  --bg-surface: #231f18;   /* dark sand — cards, panels */
+  --bg-raised:  #2e2920;   /* medium sand — alternating sections */
 
-  --border-subtle:  rgba(240, 237, 232, 0.07);
-  --border-default: rgba(240, 237, 232, 0.12);
-  --border-accent:  rgba(123, 163, 212, 0.30);
+  --border-subtle:  rgba(232, 227, 216, 0.07);
+  --border-default: rgba(232, 227, 216, 0.12);
+  --border-accent:  rgba(78, 111, 186, 0.32);
 
-  /* Desaturated steel blue — readable on warm dark bg */
-  --accent:       #7BA3D4;
-  --accent-light: #A0BFE0;
-  --accent-glow:  rgba(123, 163, 212, 0.14);
+  /* Steel blue tuned for warm sand bg */
+  --accent:       #4e6fba;
+  --accent-light: #8aaee8;
+  --accent-glow:  rgba(78, 111, 186, 0.16);
+
+  /* Dark mode accent overrides */
+  --gold:         #b8921e;
+  --gold-glow:    rgba(184, 146, 30, 0.14);
+  --crimson:      #c0432a;
+  --crimson-glow: rgba(192, 67, 42, 0.14);
 }
 
 /* --- Scroll: smooth + clear fixed navbar on anchor jumps --- */
@@ -90,7 +96,7 @@ textarea:focus-visible {
 }
 
 body.dark #hero h1 {
-  color: #F8FAFC;
+  color: #e8e3d8;
 }
 
 #hero h2 {
@@ -113,6 +119,11 @@ body.dark #hero h1 {
               0 16px 48px rgba(70, 108, 166, 0.20) !important;
 }
 
+/* Hero button row: center-align Resume button with social icon row */
+#hero .content > .row {
+  align-items: center !important;
+}
+
 /* Hero Resume button: filled blue, vertically aligned with social icons */
 #hero a.btn:not(.social-icon) {
   background-color: var(--primary-color) !important;
@@ -129,8 +140,17 @@ body.dark #hero h1 {
 }
 
 /* --- Navbar --- */
-.navbar-brand img {
-  vertical-align: middle !important;
+
+/* Cat icon + brand name: flex so align-items works (vertical-align is ignored in flex) */
+.navbar-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem;
+}
+
+/* Align all nav items (text links + theme toggle) to the same vertical center */
+.navbar-nav {
+  align-items: center !important;
 }
 
 nav, .navbar, header nav {
@@ -141,12 +161,12 @@ nav, .navbar, header nav {
 body.dark nav,
 body.dark .navbar,
 body.dark header nav {
-  background: rgba(23, 18, 15, 0.85) !important;
+  background: rgba(28, 26, 22, 0.88) !important;
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .navbar-brand {
-  font-weight: 700;
+  font-weight: 700 !important;
   font-size: 1.15rem;
   letter-spacing: -0.04em;
   transition: opacity 0.2s ease;
@@ -240,10 +260,24 @@ body.dark header nav {
   border-color: #C9A32B;
 }
 
+/* AI/ML pills in dark: darker blue bg + lighter blue text */
+body.dark #about ul li:nth-child(-n+4) {
+  background-color: #2d3f6b;
+  color: #8aaee8;
+  border-color: #2d3f6b;
+}
+
+/* Infrastructure pills in dark: dark gold bg + warm gold text */
 body.dark #about ul li:nth-child(n+5):nth-child(-n+8) {
-  background-color: #B5880F;   /* warm gold on dark bg */
-  color: #FAF5E4;
-  border-color: #B5880F;
+  background-color: #5a430e;
+  color: #d4ac5a;
+  border-color: #5a430e;
+}
+
+/* Outline pills in dark: lighter text for readability */
+body.dark #about ul li:nth-child(n+9) {
+  border-color: #4e6fba;
+  color: #8aaee8;
 }
 
 /* Remaining (9+): outline */
@@ -320,8 +354,8 @@ body.dark #about ul li:nth-child(n+5):nth-child(-n+8) {
 }
 
 body.dark #projects .badge {
-  background-color: rgba(123, 163, 212, 0.16) !important;
-  color: #A0BFE0 !important;
+  background-color: rgba(78, 111, 186, 0.18) !important;
+  color: #8aaee8 !important;
 }
 
 /* ICRA 2021 research project (card 4) — crimson accent for academic distinction */
@@ -344,20 +378,20 @@ body.dark #projects .badge {
 }
 
 body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg {
-  border-left-color: #C4503A !important;
-  box-shadow: 0 4px 16px rgba(196, 80, 58, 0.14) !important;
+  border-left-color: #c0432a !important;
+  box-shadow: 0 4px 16px rgba(192, 67, 42, 0.14) !important;
 }
 
 body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg:hover {
   box-shadow:
-    0 0 0 1px rgba(196, 80, 58, 0.08),
+    0 0 0 1px rgba(192, 67, 42, 0.08),
     0 12px 40px rgba(0, 0, 0, 0.28),
-    0 2px 8px rgba(196, 80, 58, 0.14) !important;
+    0 2px 8px rgba(192, 67, 42, 0.14) !important;
 }
 
 body.dark #projects .row .col-lg-6:nth-child(4) .badge {
-  background-color: rgba(196, 80, 58, 0.15) !important;
-  color: #E8937F !important;
+  background-color: rgba(192, 67, 42, 0.18) !important;
+  color: #e07860 !important;
 }
 
 /* ============================================================
@@ -414,7 +448,9 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
 
 #education .card:hover {
   transform: translateY(-3px);
-  border-color: var(--border-accent) !important;
+  /* Use border shorthand (not just border-color) to prevent theme's 2px hover from
+     narrowing the content box and causing text reflow */
+  border: 1px solid var(--border-accent) !important;
   box-shadow:
     0 0 0 1px rgba(107, 141, 196, 0.08),
     0 8px 32px rgba(0, 0, 0, 0.14),
@@ -513,7 +549,7 @@ body.dark .tech-tag {
 }
 
 body.dark .tech-tag:hover {
-  color: #C0D8F0 !important;
+  color: #aac3f0 !important;
 }
 
 /* ============================================================
