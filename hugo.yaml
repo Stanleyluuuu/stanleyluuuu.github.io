@@ -46,13 +46,13 @@ params:
     primaryColor: "#466CA6"
     secondaryColor: "#EDE6DA"
     darkmode:
-      textColor: "#F1F5F9"
-      secondaryTextColor: "#94A3B8"
-      textLinkColor: "#60A5FA"
-      backgroundColor: "#0F172A"
-      secondaryBackgroundColor: "#1E293B"
-      primaryColor: "#60A5FA"
-      secondaryColor: "#1E293B"
+      textColor: "#F0EDE8"
+      secondaryTextColor: "#A89E94"
+      textLinkColor: "#8AAEDD"
+      backgroundColor: "#17120F"
+      secondaryBackgroundColor: "#241C17"
+      primaryColor: "#7BA3D4"
+      secondaryColor: "#241C17"
 
   font:
     fontSize: 1rem
