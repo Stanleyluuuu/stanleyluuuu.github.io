@@ -111,7 +111,7 @@ params:
     content: |-
       I am an **AI Software Engineer at Garmin Ltd.** (Nov 2023 – present), where I lead the development of an organization-wide computer vision platform scaling across **200+ active production services**.
 
-      I lead GenAI adoption by evaluating state-of-the-art LLM/VLM models, running proof-of-concepts, and deploying high-value AI use cases across the organization. I also mentor interns on AI system design and oversee cross-functional AI infrastructure end-to-end.
+      I lead GenAI adoption by evaluating **10+ LLM/VLM models** through structured proof-of-concepts, producing internal technical assessments that guide company-wide model selection and shipping **5 use cases into production**. I also mentor interns on AI system design and oversee cross-functional AI infrastructure end-to-end.
 
       Previously, I completed my **Master's in Electrical Engineering at NTHU**, conducting research in computer vision under Prof. Min Sun, which resulted in a publication at **ICRA 2021**.
     skills:
@@ -129,6 +129,7 @@ params:
         - "MySQL / MongoDB"
         - "Git / CI/CD"
         - "vLLM"
+        - "Scikit-Learn"
         - "C++ (CUDA/OpenMP/MPI)"
 
   # Experience Section
@@ -144,8 +145,8 @@ params:
               content: "Xindian, Taiwan"
             content: |
               - **Led Large-Scale AI Deployment** as the primary developer for an organization-wide computer vision platform, scaling and maintaining **200+ active production services**.
-              - **Led GenAI Adoption** by evaluating state-of-the-art LLM/VLM models through structured proof-of-concepts to identify and deploy high-value use cases across the organization.
-              - **Mentored 2 interns** on AI system design and production deployment, while managing the full lifecycle of cross-functional AI infrastructure.
+              - **Led GenAI Adoption** by evaluating **10+ LLM/VLM models** through structured proof-of-concepts, producing internal technical assessments that guided company-wide model adoption and shipped **5 use cases into production**.
+              - **Mentored 2 interns** on AI system design and production deployment, guiding them to independently deliver **3–5 production services** and train **5 YOLO models** within the AI Surveillance Platform.
 
   # Education Section
   education:
@@ -197,7 +198,7 @@ params:
       - title: "AI-Powered Document Inspection System"
         content: |
           Sole Developer & PM at Garmin (Mar 2024 – present).
-          Automated document verification pipeline combining OCR and computer vision image comparison, **reducing manual inspection time by 90%**. Designed a human-in-the-loop review process for flagged anomalies.
+          Automated document verification pipeline combining OCR and computer vision image comparison, **reducing manual inspection time by 90%** while improving defect detection accuracy. Designed a human-in-the-loop review process that filters low-risk documents so operators focus only on flagged anomalies.
         badges:
           - "Python"
           - "OCR"
@@ -207,7 +208,7 @@ params:
       - title: "Enterprise VLM/LLM Research & API Governance"
         content: |
           AI Researcher & Platform Owner at Garmin (Apr 2024 – present).
-          Continuously evaluated state-of-the-art models through structured proof-of-concepts. Administered the internal GenAI API platform via Kong Gateway and established observability via Grafana dashboards.
+          Continuously evaluate emerging models and open-source inference frameworks through structured POCs, producing internal technical assessments to guide company-wide adoption. Identified and validated high-value internal use cases for Vision-Language Models, bridging research and enterprise deployment. Administered the internal GenAI API platform via Kong Gateway — managing API key lifecycle, access control, and rate-limiting — and established platform observability through Grafana dashboards.
         badges:
           - "LLM"
           - "VLM"
