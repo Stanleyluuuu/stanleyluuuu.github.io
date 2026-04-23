@@ -59,6 +59,7 @@ body {
   font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 1rem;
   letter-spacing: -0.01em;
+  line-height: 1.65;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -111,12 +112,13 @@ body.dark #hero h1 {
   max-width: 560px;
 }
 
-/* Hero image: circular with steel-blue ring */
+/* Hero image: circular with steel-blue ring + refined inset edge */
 #hero .image img {
   border-radius: 50% !important;
   border: 3px solid var(--primary-color) !important;
   box-shadow: 0 0 0 6px var(--secondary-color),
-              0 16px 48px rgba(70, 108, 166, 0.20) !important;
+              0 16px 48px rgba(70, 108, 166, 0.20),
+              inset 0 0 0 1px rgba(70, 108, 166, 0.10) !important;
 }
 
 /* Hero button row: center-align Resume button with social icon row */
@@ -124,17 +126,18 @@ body.dark #hero h1 {
   align-items: center !important;
 }
 
-/* Hero Resume button: filled blue, vertically aligned with social icons */
+/* Hero Resume button: deep navy, vertically aligned with social icons */
 #hero a.btn:not(.social-icon) {
-  background-color: var(--primary-color) !important;
+  background-color: #1e2f4a !important;
   color: #FAF7F2 !important;
-  border-color: var(--primary-color) !important;
+  border-color: #1e2f4a !important;
   font-weight: 600;
   vertical-align: middle !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
 }
 
 #hero a.btn:not(.social-icon):hover {
-  background-color: #365885 !important;
+  background-color: #2d4468 !important;
   color: #FAF7F2 !important;
   opacity: 1 !important;
 }
@@ -154,8 +157,11 @@ body.dark #hero h1 {
 }
 
 nav, .navbar, header nav {
-  backdrop-filter: blur(8px) saturate(140%);
-  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  background: rgba(253, 250, 246, 0.82) !important;
+  border-bottom: 1px solid rgba(70, 108, 166, 0.07);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 body.dark nav,
@@ -305,11 +311,13 @@ body.dark #about ul li:nth-child(n+9) {
 #projects .card.project-card-noimg {
   min-height: unset !important;
   border: 1px solid var(--border-subtle) !important;
-  border-radius: 12px !important;
+  border-radius: 14px !important;
   border-left: 3px solid var(--accent) !important;
   background: var(--bg-surface);
   box-shadow: 0 4px 16px var(--accent-glow) !important;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
+  transition: border-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -339,11 +347,12 @@ body.dark #about ul li:nth-child(n+9) {
 }
 
 #projects .card.project-card-noimg:hover {
-  transform: translateY(-4px) !important;
+  transform: translateY(-8px) !important;
   border-color: var(--border-accent) !important;
   box-shadow:
     0 0 0 1px rgba(107, 141, 196, 0.08),
-    0 12px 40px rgba(0, 0, 0, 0.16),
+    0 20px 48px rgba(0, 0, 0, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.08),
     0 2px 8px var(--accent-glow) !important;
 }
 
@@ -368,7 +377,8 @@ body.dark #projects .badge {
   border-left-color: #6E1D0B !important;
   box-shadow:
     0 0 0 1px rgba(135, 36, 14, 0.08),
-    0 12px 40px rgba(0, 0, 0, 0.18),
+    0 20px 48px rgba(0, 0, 0, 0.14),
+    0 8px 24px rgba(0, 0, 0, 0.08),
     0 2px 8px rgba(135, 36, 14, 0.12) !important;
 }
 
@@ -385,7 +395,8 @@ body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg {
 body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg:hover {
   box-shadow:
     0 0 0 1px rgba(192, 67, 42, 0.08),
-    0 12px 40px rgba(0, 0, 0, 0.28),
+    0 20px 48px rgba(0, 0, 0, 0.32),
+    0 8px 24px rgba(0, 0, 0, 0.14),
     0 2px 8px rgba(192, 67, 42, 0.14) !important;
 }
 
@@ -441,19 +452,22 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
   border: 1px solid var(--border-subtle) !important;
   background: var(--bg-surface);
   box-shadow: 0 4px 24px rgba(70, 108, 166, 0.08) !important;
-  border-radius: 12px !important;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
+  border-radius: 14px !important;
+  transition: border-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
   cursor: pointer;
 }
 
 #education .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-6px);
   /* Use border shorthand (not just border-color) to prevent theme's 2px hover from
      narrowing the content box and causing text reflow */
   border: 1px solid var(--border-accent) !important;
   box-shadow:
     0 0 0 1px rgba(107, 141, 196, 0.08),
-    0 8px 32px rgba(0, 0, 0, 0.14),
+    0 16px 40px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.06),
     0 2px 8px var(--accent-glow) !important;
 }
 
@@ -959,7 +973,7 @@ a, button, [role="button"] {
   #education .card:hover,
   #projects .card.project-card-noimg:hover {
     transform: none !important;
-    box-shadow: 0 4px 16px var(--accent-glow) !important;
+    box-shadow: 0 4px 24px var(--accent-glow) !important;
   }
 
   .lab-btn:hover {
