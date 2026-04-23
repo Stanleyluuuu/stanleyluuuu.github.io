@@ -1,6 +1,7 @@
 <span>
     {{ range .Site.Params.hero.socialLinks.fontAwesomeIcons }}
-    {{ $label := cond (hasPrefix .url "mailto:") "Email" (cond (strings.Contains .url "github") "GitHub" (cond (strings.Contains .url "linkedin") "LinkedIn" "Social link")) }}
+    {{ $fallback := cond (hasPrefix .url "mailto:") "Email" (cond (strings.Contains .url "github") "GitHub profile" (cond (strings.Contains .url "linkedin") "LinkedIn profile" "Social link")) }}
+    {{ $label := .label | default $fallback }}
     <span class="px-1">
         <a href="{{ .url }}"
             {{ if not (hasPrefix .url "#") }} target="_blank" rel="noopener noreferrer" {{ end }}

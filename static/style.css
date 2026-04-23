@@ -8,42 +8,36 @@
    Palette: Warm Beige · Steel Blue · Gold · Crimson · Near-Black
    ============================================================ */
 :root {
-  --bg-base:    #FDFAF6;
-  --bg-surface: #F5F0E8;
-  --bg-raised:  #EDE6DA;   /* warm beige, alternating sections */
+  --bg-base:    #F2F2F7;   /* slightly deeper — creates contrast with white cards */
+  --bg-surface: #FFFFFF;
+  --bg-raised:  #E8E8ED;   /* Apple section gray, deeper for separation */
 
-  --border-subtle:  rgba(70, 108, 166, 0.08);
-  --border-default: rgba(70, 108, 166, 0.14);
-  --border-accent:  rgba(107, 141, 196, 0.35);
+  --border-subtle:  rgba(0, 0, 0, 0.06);
+  --border-default: rgba(0, 0, 0, 0.10);
+  --border-accent:  rgba(0, 113, 227, 0.40);
 
-  --accent:       #466CA6;
-  --accent-light: #6B8DC4;
-  --accent-glow:  rgba(70, 108, 166, 0.12);
+  --accent:       #0071E3;
+  --accent-light: #2997FF;
+  --accent-glow:  rgba(0, 113, 227, 0.10);
 
-  /* Gold + Crimson — used for special accents */
-  --gold:         #C9A32B;
-  --gold-glow:    rgba(201, 163, 43, 0.12);
+  /* Crimson kept for ICRA card special accent */
   --crimson:      #87240E;
   --crimson-glow: rgba(135, 36, 14, 0.10);
 }
 
 body.dark {
-  --bg-base:    #1c1a16;   /* warm sand black */
-  --bg-surface: #231f18;   /* dark sand — cards, panels */
-  --bg-raised:  #2e2920;   /* medium sand — alternating sections */
+  --bg-base:    #161617;   /* Apple standard dark bg */
+  --bg-surface: #2C2C2E;   /* cards, panels — floats above section bg */
+  --bg-raised:  #1D1D1F;   /* alternating sections */
 
-  --border-subtle:  rgba(232, 227, 216, 0.07);
-  --border-default: rgba(232, 227, 216, 0.12);
-  --border-accent:  rgba(78, 111, 186, 0.32);
+  --border-subtle:  rgba(255, 255, 255, 0.07);
+  --border-default: rgba(255, 255, 255, 0.10);
+  --border-accent:  rgba(10, 132, 255, 0.30);
 
-  /* Steel blue tuned for warm sand bg */
-  --accent:       #4e6fba;
-  --accent-light: #8aaee8;
-  --accent-glow:  rgba(78, 111, 186, 0.16);
+  --accent:       #0A84FF;
+  --accent-light: #2997FF;
+  --accent-glow:  rgba(10, 132, 255, 0.18);
 
-  /* Dark mode accent overrides */
-  --gold:         #b8921e;
-  --gold-glow:    rgba(184, 146, 30, 0.14);
   --crimson:      #c0432a;
   --crimson-glow: rgba(192, 67, 42, 0.14);
 }
@@ -59,7 +53,7 @@ body {
   font-family: 'DM Sans', system-ui, sans-serif;
   font-size: 1rem;
   letter-spacing: -0.01em;
-  line-height: 1.65;
+  line-height: 1.75;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -92,17 +86,21 @@ textarea:focus-visible {
 }
 
 #hero h1 {
-  font-weight: 700;
-  line-height: 1.1;
+  font-size: clamp(2.4rem, 8vw, 5rem) !important;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
 }
 
 body.dark #hero h1 {
-  color: #e8e3d8;
+  color: #F5F5F7;
 }
 
 #hero h2 {
+  font-size: clamp(1.1rem, 3vw, 1.5rem) !important;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 #hero p {
@@ -112,13 +110,18 @@ body.dark #hero h1 {
   max-width: 560px;
 }
 
-/* Hero image: circular with steel-blue ring + refined inset edge */
+/* Hero image: circular — thin neutral ring, floating drop shadow */
 #hero .image img {
   border-radius: 50% !important;
-  border: 3px solid var(--primary-color) !important;
-  box-shadow: 0 0 0 6px var(--secondary-color),
-              0 16px 48px rgba(70, 108, 166, 0.20),
-              inset 0 0 0 1px rgba(70, 108, 166, 0.10) !important;
+  border: 2px solid #E5E5EA !important;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.10),
+              0 4px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+body.dark #hero .image img {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.32),
+              0 4px 16px rgba(0, 0, 0, 0.16) !important;
 }
 
 /* Hero button row: center-align Resume button with social icon row */
@@ -126,19 +129,27 @@ body.dark #hero h1 {
   align-items: center !important;
 }
 
-/* Hero Resume button: deep navy, vertically aligned with social icons */
+/* Hero Resume button: Apple pill — near-black, subtle shadow, pure black on hover */
 #hero a.btn:not(.social-icon) {
-  background-color: #1e2f4a !important;
-  color: #FAF7F2 !important;
-  border-color: #1e2f4a !important;
+  background-color: #1D1D1F !important;
+  color: #FFFFFF !important;
+  border-color: #1D1D1F !important;
+  border-radius: 980px !important;
+  padding: 10px 24px !important;
   font-weight: 600;
   vertical-align: middle !important;
-  transition: background-color 0.2s ease, transform 0.2s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14) !important;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 #hero a.btn:not(.social-icon):hover {
-  background-color: #2d4468 !important;
-  color: #FAF7F2 !important;
+  background-color: #111111 !important;
+  border-color: #111111 !important;
+  color: #FFFFFF !important;
+  transform: scale(1.03) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20) !important;
   opacity: 1 !important;
 }
 
@@ -159,16 +170,16 @@ body.dark #hero h1 {
 nav, .navbar, header nav {
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
-  background: rgba(253, 250, 246, 0.82) !important;
-  border-bottom: 1px solid rgba(70, 108, 166, 0.07);
+  background: rgba(251, 251, 253, 0.88) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 body.dark nav,
 body.dark .navbar,
 body.dark header nav {
-  background: rgba(28, 26, 22, 0.88) !important;
-  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(22, 22, 23, 0.85) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar-brand {
@@ -212,6 +223,45 @@ body.dark header nav {
 /* Dark mode: --bg-raised resolves to #1c2333, --bg-base to #0d1117 — handled by tokens above */
 
 /* ============================================================
+   SECTION SPACING & HEADING HIERARCHY
+   ============================================================ */
+
+/* More generous vertical breathing room between sections */
+section {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+/* Section headings — editorial weight, clear contrast over body copy */
+section > .container > h3,
+section h3.text-center {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 2.5rem !important;
+  color: #1D1D1F !important;
+}
+
+body.dark section > .container > h3,
+body.dark section h3.text-center {
+  color: #F5F5F7 !important;
+}
+
+/* Section sub-headings: clear step down from h3 → h4/h5 */
+section h4,
+section h5 {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #1D1D1F;
+}
+
+body.dark section h4,
+body.dark section h5 {
+  color: #F5F5F7;
+}
+
+/* ============================================================
    ABOUT — skill pills
    ============================================================ */
 
@@ -227,81 +277,95 @@ body.dark header nav {
   overflow: visible !important;
 }
 
-/* About content text: explicit color to prevent any cascade bug */
+/* About content text: explicit color + comfortable reading line-height */
 #about .content,
 #about .content p {
-  color: var(--text-color) !important;
+  color: #4A4A4F !important;
+  line-height: 1.8;
+  margin-bottom: 1.2em;
+}
+
+body.dark #about .content,
+body.dark #about .content p {
+  color: #86868B !important;
 }
 
 #about ul li {
   position: relative;
   margin-bottom: 0;
-  padding: 4px 14px;
+  padding: 5px 16px;
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 500;
+  letter-spacing: 0.03em;
   background-color: transparent;
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
-  /* Hover animation */
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  color: #6E6E73;
   transition: transform 0.18s cubic-bezier(0.25, 1, 0.5, 1),
               box-shadow 0.18s cubic-bezier(0.25, 1, 0.5, 1),
-              opacity 0.18s ease;
+              background-color 0.18s ease,
+              color 0.18s ease;
   cursor: default;
 }
 
 #about ul li::before { content: none; }
 
-/* Core AI/ML skills (1–4): filled steel blue */
+/* Core AI/ML skills (1–4): outline Apple blue */
 #about ul li:nth-child(-n+4) {
-  background-color: var(--primary-color);
-  color: #FAF7F2;
-  border-color: var(--primary-color);
-}
-
-/* Infrastructure skills (5–8): gold — warm contrast from steel blue */
-#about ul li:nth-child(n+5):nth-child(-n+8) {
-  background-color: #C9A32B;
-  color: #FAF7F2;
-  border-color: #C9A32B;
-}
-
-/* AI/ML pills in dark: darker blue bg + lighter blue text */
-body.dark #about ul li:nth-child(-n+4) {
-  background-color: #2d3f6b;
-  color: #8aaee8;
-  border-color: #2d3f6b;
-}
-
-/* Infrastructure pills in dark: dark gold bg + warm gold text */
-body.dark #about ul li:nth-child(n+5):nth-child(-n+8) {
-  background-color: #5a430e;
-  color: #d4ac5a;
-  border-color: #5a430e;
-}
-
-/* Outline pills in dark: lighter text for readability */
-body.dark #about ul li:nth-child(n+9) {
-  border-color: #4e6fba;
-  color: #8aaee8;
-}
-
-/* Remaining (9+): outline */
-#about ul li:nth-child(n+9) {
   background-color: transparent;
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  color: #0071E3;
+  border-color: rgba(0, 113, 227, 0.35);
+}
+
+/* All other skills (5+): neutral outline — minimal, breathable */
+#about ul li:nth-child(n+5) {
+  background-color: transparent;
+  color: #6E6E73;
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+/* AI/ML pills in dark: Apple blue */
+body.dark #about ul li:nth-child(-n+4) {
+  background-color: transparent;
+  color: #0A84FF;
+  border-color: rgba(10, 132, 255, 0.35);
+}
+
+/* All other pills in dark: neutral outline */
+body.dark #about ul li:nth-child(n+5) {
+  background-color: transparent;
+  color: #86868B;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Dark pill hover — prevent light-mode color leak */
+body.dark #about ul li:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #F5F5F7;
+  border-color: rgba(255, 255, 255, 0.20);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.32);
+}
+
+body.dark #about ul li:nth-child(-n+4):hover {
+  background-color: rgba(10, 132, 255, 0.10);
+  color: #0A84FF;
+  border-color: rgba(10, 132, 255, 0.45);
+  box-shadow: 0 4px 12px rgba(10, 132, 255, 0.20);
 }
 
 #about ul li:hover {
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 4px 12px rgba(70, 108, 166, 0.22);
-  opacity: 0.92;
+  transform: translateY(-2px) scale(1.03);
+  background-color: rgba(0, 0, 0, 0.03);
+  color: #1D1D1F;
+  border-color: rgba(0, 0, 0, 0.20);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Golden pill hover: slightly different shadow hue */
-#about ul li:nth-child(n+5):nth-child(-n+8):hover {
-  box-shadow: 0 4px 12px rgba(201, 163, 43, 0.28);
+#about ul li:nth-child(-n+4):hover {
+  background-color: rgba(0, 113, 227, 0.06);
+  color: #0071E3;
+  border-color: rgba(0, 113, 227, 0.45);
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.14);
 }
 
 /* ============================================================
@@ -310,73 +374,77 @@ body.dark #about ul li:nth-child(n+9) {
 
 #projects .card.project-card-noimg {
   min-height: unset !important;
-  border: 1px solid var(--border-subtle) !important;
-  border-radius: 14px !important;
-  border-left: 3px solid var(--accent) !important;
-  background: var(--bg-surface);
-  box-shadow: 0 4px 16px var(--accent-glow) !important;
-  transition: border-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  border-top: 2px solid var(--accent) !important;
+  border-radius: 20px !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
               transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
 }
 
-#projects .card.project-card-noimg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(70, 108, 166, 0.04) 0%, transparent 55%);
-  pointer-events: none;
+/* Fix: ensure card title and body text use Apple palette explicitly */
+#projects .card.project-card-noimg .card-title {
+  color: #1D1D1F !important;
 }
 
-/* Fix: ensure card title and body text are always visible */
-#projects .card.project-card-noimg .card-title,
 #projects .card.project-card-noimg .card-text,
 #projects .card.project-card-noimg .card-text p {
-  color: var(--text-color) !important;
+  color: #6E6E73 !important;
+  line-height: 1.75;
+}
+
+body.dark #projects .card.project-card-noimg .card-title {
+  color: #F5F5F7 !important;
+}
+
+body.dark #projects .card.project-card-noimg .card-text,
+body.dark #projects .card.project-card-noimg .card-text p {
+  color: #86868B !important;
 }
 
 #projects .card.project-card-noimg .card-title {
   font-family: 'Outfit', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.05rem;
   letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
 }
 
 #projects .card.project-card-noimg:hover {
   transform: translateY(-8px) !important;
-  border-color: var(--border-accent) !important;
   box-shadow:
-    0 0 0 1px rgba(107, 141, 196, 0.08),
-    0 20px 48px rgba(0, 0, 0, 0.12),
-    0 8px 24px rgba(0, 0, 0, 0.08),
-    0 2px 8px var(--accent-glow) !important;
+    0 20px 48px rgba(0, 0, 0, 0.10),
+    0 8px 24px rgba(0, 0, 0, 0.06) !important;
 }
 
-/* Badge chips — all enterprise projects */
+/* Project card grid — more breathing room between cards */
+#projects .row .col-lg-6 {
+  margin-bottom: 0.5rem;
+}
+
+/* Badge chips — neutral Apple style */
 #projects .badge {
-  background-color: rgba(70, 108, 166, 0.10) !important;
-  color: #365885 !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: #6E6E73 !important;
 }
 
 body.dark #projects .badge {
-  background-color: rgba(78, 111, 186, 0.18) !important;
-  color: #8aaee8 !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #86868B !important;
 }
 
-/* ICRA 2021 research project (card 4) — crimson accent for academic distinction */
+/* ICRA 2021 research project (card 4) — crimson top border for academic distinction */
 #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg {
-  border-left-color: #87240E !important;
-  box-shadow: 0 4px 16px rgba(135, 36, 14, 0.10) !important;
+  border-top-color: #87240E !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.05) !important;
 }
 
 #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg:hover {
-  border-left-color: #6E1D0B !important;
+  border-top-color: #6E1D0B !important;
   box-shadow:
-    0 0 0 1px rgba(135, 36, 14, 0.08),
     0 20px 48px rgba(0, 0, 0, 0.14),
     0 8px 24px rgba(0, 0, 0, 0.08),
     0 2px 8px rgba(135, 36, 14, 0.12) !important;
@@ -388,7 +456,7 @@ body.dark #projects .badge {
 }
 
 body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg {
-  border-left-color: #c0432a !important;
+  border-top-color: #c0432a !important;
   box-shadow: 0 4px 16px rgba(192, 67, 42, 0.14) !important;
 }
 
@@ -410,10 +478,28 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
    ============================================================ */
 
 #experience .experience-container {
-  border-radius: 12px !important;
-  border: 1px solid var(--border-subtle) !important;
-  box-shadow: 0 4px 24px var(--accent-glow) !important;
-  background: var(--bg-surface);
+  border-radius: 20px !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  background: #FFFFFF !important;
+}
+
+body.dark #experience .experience-container {
+  background: #2C2C2E !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 10px 40px rgba(0, 0, 0, 0.40) !important;
+}
+
+body.dark #projects .card.project-card-noimg {
+  background: #2C2C2E !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 10px 40px rgba(0, 0, 0, 0.40) !important;
+}
+
+body.dark #education .card {
+  background: #2C2C2E !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 10px 40px rgba(0, 0, 0, 0.40) !important;
 }
 
 #experience .nav-item .nav-link.active {
@@ -449,10 +535,10 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
 
 /* Both cards: same border treatment, consistent hover */
 #education .card {
-  border: 1px solid var(--border-subtle) !important;
-  background: var(--bg-surface);
-  box-shadow: 0 4px 24px rgba(70, 108, 166, 0.08) !important;
-  border-radius: 14px !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 20px !important;
   transition: border-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
               box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
               transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
@@ -461,14 +547,10 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
 
 #education .card:hover {
   transform: translateY(-6px);
-  /* Use border shorthand (not just border-color) to prevent theme's 2px hover from
-     narrowing the content box and causing text reflow */
-  border: 1px solid var(--border-accent) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
   box-shadow:
-    0 0 0 1px rgba(107, 141, 196, 0.08),
-    0 16px 40px rgba(0, 0, 0, 0.12),
-    0 4px 12px rgba(0, 0, 0, 0.06),
-    0 2px 8px var(--accent-glow) !important;
+    0 20px 48px rgba(0, 0, 0, 0.10),
+    0 8px 24px rgba(0, 0, 0, 0.06) !important;
 }
 
 #education .index {
@@ -481,24 +563,36 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
   align-items: center;
   gap: 0.375rem;
   padding: 0.3rem 0.85rem;
-  border: 1px solid rgba(107, 141, 196, 0.35);
+  border: 1px solid rgba(0, 113, 227, 0.28);
   border-radius: 9999px;
   font-size: 0.78rem;
   font-weight: 500;
   font-family: 'DM Mono', monospace;
-  color: #5A80B8;
-  background: rgba(107, 141, 196, 0.07);
+  color: #0071E3;
+  background: rgba(0, 113, 227, 0.06);
   text-decoration: none;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
   letter-spacing: 0.02em;
 }
 
 .lab-btn:hover {
-  background: rgba(107, 141, 196, 0.16);
-  border-color: rgba(107, 141, 196, 0.60);
-  color: #466CA6;
+  background: rgba(0, 113, 227, 0.10);
+  border-color: rgba(0, 113, 227, 0.50);
+  color: #005BBB;
   transform: translateY(-1px);
   text-decoration: none;
+}
+
+body.dark .lab-btn {
+  color: #0A84FF;
+  background: rgba(10, 132, 255, 0.08);
+  border-color: rgba(10, 132, 255, 0.25);
+}
+
+body.dark .lab-btn:hover {
+  background: rgba(10, 132, 255, 0.14);
+  border-color: rgba(10, 132, 255, 0.45);
+  color: #2997FF;
 }
 
 /* ============================================================
@@ -506,15 +600,21 @@ body.dark #projects .row .col-lg-6:nth-child(4) .badge {
    ============================================================ */
 
 #contact .btn {
-  background-color: var(--primary-color) !important;
-  color: #FAF7F2 !important;
-  border-color: var(--primary-color) !important;
+  background-color: #1D1D1F !important;
+  color: #FFFFFF !important;
+  border-color: #1D1D1F !important;
+  border-radius: 980px !important;
   font-weight: 600;
   padding: 0.65rem 2rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14) !important;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 #contact .btn:hover {
-  background-color: #365885 !important;
+  background-color: #111111 !important;
+  border-color: #111111 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20) !important;
   opacity: 1 !important;
 }
 
@@ -540,30 +640,33 @@ body.dark footer a[href*="linkedin"]:hover { color: #5B9BD5 !important; }
    TECH TAGS — monospace pill with accent border
    ============================================================ */
 .tech-tag {
-  background: rgba(70, 108, 166, 0.10) !important;
-  border: 1px solid rgba(70, 108, 166, 0.22) !important;
-  color: #365885 !important;           /* WCAG AA on warm-white bg */
-  border-radius: 6px !important;
-  padding: 0.2rem 0.65rem !important;
+  background: transparent !important;
+  border: 1px solid rgba(108, 122, 143, 0.22) !important;
+  color: #6C7A8F !important;
+  border-radius: 980px !important;
+  padding: 0.2rem 0.7rem !important;
   font-size: 0.75rem !important;
   font-weight: 500 !important;
   letter-spacing: 0.03em;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
-/* Dark mode: restore light color */
 body.dark .tech-tag {
-  color: var(--accent-light) !important;
+  background: transparent !important;
+  border-color: rgba(155, 168, 188, 0.22) !important;
+  color: #7A8A9E !important;
 }
 
 .tech-tag:hover {
-  background: rgba(70, 108, 166, 0.18) !important;
-  border-color: rgba(70, 108, 166, 0.40) !important;
-  color: #2A4570 !important;
+  background: rgba(108, 122, 143, 0.06) !important;
+  border-color: rgba(108, 122, 143, 0.40) !important;
+  color: #4A5568 !important;
 }
 
 body.dark .tech-tag:hover {
-  color: #aac3f0 !important;
+  background: rgba(155, 168, 188, 0.10) !important;
+  border-color: rgba(155, 168, 188, 0.40) !important;
+  color: #9BB0C8 !important;
 }
 
 /* ============================================================
@@ -572,13 +675,12 @@ body.dark .tech-tag:hover {
 
 /* Hero: very subtle dot-grid background */
 #hero {
-  background-image: radial-gradient(circle, rgba(70, 108, 166, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
-/* Dark mode: white dots so texture stays visible on dark bg */
 body.dark #hero {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
 /* "Live" pulsing green dot on the first experience nav tab (current role) */
@@ -603,8 +705,8 @@ body.dark #hero {
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%) translateY(12px);
-  background: #2A2218;
-  color: #F1EDE5;
+  background: #2C2C2E;
+  color: #F5F5F7;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
@@ -701,24 +803,35 @@ header .navbar-nav .nav-link:hover::after {
   left: 0;
 }
 
-/* Social icon hover: scale */
+/* Social icon hover: scale + reveal */
 #hero a.btn.social-icon {
+  color: #C7C7CC !important;
   transition:
     transform 0.2s cubic-bezier(0.25, 1, 0.5, 1),
-    background-color 0.2s ease,
+    color 0.2s ease,
     opacity 0.2s ease !important;
 }
 
 #hero a.btn.social-icon:hover {
   transform: scale(1.15) !important;
+  color: #1D1D1F !important;
   opacity: 1 !important;
 }
 
-/* Button press feedback */
+body.dark #hero a.btn.social-icon {
+  color: #636366 !important;
+}
+
+body.dark #hero a.btn.social-icon:hover {
+  color: #F5F5F7 !important;
+}
+
+/* Button press feedback — physical click feel */
 #hero a.btn:not(.social-icon):active,
 #contact .btn:active {
-  transform: scale(0.96) !important;
-  transition: transform 0.08s ease !important;
+  transform: scale(0.95) !important;
+  transition: transform 0.08s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
 }
 
 /* Ripple effect */
@@ -900,9 +1013,9 @@ a, button, [role="button"] {
 
 /* ── Very small phones (≤ 360px: iPhone SE 1st-gen, narrow Androids) ── */
 @media (max-width: 360px) {
-  /* Hero title can be too wide — scale down to keep it on 2 lines max */
+  /* Hero title clamp already handles small phones, but enforce a floor */
   #hero h1 {
-    font-size: 1.9rem !important;
+    font-size: clamp(1.9rem, 9vw, 2.6rem) !important;
   }
 
   /* Skill pills: tighter padding so they wrap cleanly without overflow */
@@ -955,9 +1068,9 @@ a, button, [role="button"] {
   }
 
   #hero a.btn:not(.social-icon) {
-    border: 1px solid #466CA6 !important;
+    border: 1px solid #0071E3 !important;
     background: transparent !important;
-    color: #466CA6 !important;
+    color: #0071E3 !important;
   }
 
   a[href^="http"]::after {

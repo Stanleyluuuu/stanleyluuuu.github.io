@@ -8,12 +8,12 @@
             <div class="col-lg-6 col-md-6 my-3">
                 <div class="card my-3 h-100 project-card-noimg" title="{{ .title }}">
                     <div class="card-body bg-transparent p-4">
+                        <h5 class="card-title bg-transparent mb-2">{{ .title }}</h5>
                         <div class="pb-2 bg-transparent">
                             {{ range .badges }}
                             <span class="badge badge-secondary me-1">{{ . }}</span>
                             {{ end }}
                         </div>
-                        <h5 class="card-title bg-transparent mt-2">{{ .title }}</h5>
                         <div class="card-text bg-transparent secondary-font">
                             {{ .content | markdownify }}
                         </div>

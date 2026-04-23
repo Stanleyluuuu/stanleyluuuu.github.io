@@ -38,21 +38,21 @@ params:
     defaultTheme: "light"
 
   color:
-    textColor: "#040204"
-    secondaryTextColor: "#5A5048"
-    textLinkColor: "#466CA6"
-    backgroundColor: "#FDFAF6"
-    secondaryBackgroundColor: "#EDE6DA"
-    primaryColor: "#466CA6"
-    secondaryColor: "#EDE6DA"
+    textColor: "#1D1D1F"
+    secondaryTextColor: "#6E6E73"
+    textLinkColor: "#0071E3"
+    backgroundColor: "#F2F2F7"
+    secondaryBackgroundColor: "#E8E8ED"
+    primaryColor: "#0071E3"
+    secondaryColor: "#FFFFFF"
     darkmode:
-      textColor: "#e8e3d8"
-      secondaryTextColor: "#9e9688"
-      textLinkColor: "#8aaee8"
-      backgroundColor: "#1c1a16"
-      secondaryBackgroundColor: "#2e2920"
-      primaryColor: "#4e6fba"
-      secondaryColor: "#2e2920"
+      textColor: "#F5F5F7"
+      secondaryTextColor: "#86868B"
+      textLinkColor: "#0A84FF"
+      backgroundColor: "#161617"
+      secondaryBackgroundColor: "#1D1D1F"
+      primaryColor: "#0A84FF"
+      secondaryColor: "#2C2C2E"
 
   font:
     fontSize: 1rem
@@ -98,10 +98,13 @@ params:
       fontAwesomeIcons:
         - icon: fab fa-github
           url: https://github.com/Stanleyluuuu
+          label: "GitHub profile"
         - icon: fab fa-linkedin
           url: https://www.linkedin.com/in/kuan-wei-lu-8594ab202
+          label: "LinkedIn profile"
         - icon: fa fa-envelope
           url: mailto:stanley860920@gmail.com
+          label: "Email Stanley"
 
   # About Section
   about:

@@ -8,8 +8,8 @@
 
   /* Developer console easter egg */
   if (window.console && console.log) {
-    console.log('%c  Hi there!  ', 'background:#466CA6;color:#FAF7F2;font-size:16px;font-weight:700;padding:6px 16px;border-radius:4px;');
-    console.log('%c Kuan-Wei Lu — AI Software Engineer @ Garmin', 'color:#466CA6;font-size:13px;font-weight:600;');
+    console.log('%c  Hi there!  ', 'background:#0071E3;color:#FFFFFF;font-size:16px;font-weight:700;padding:6px 16px;border-radius:4px;');
+    console.log('%c Kuan-Wei Lu — AI Software Engineer @ Garmin', 'color:#0071E3;font-size:13px;font-weight:600;');
     console.log('%c stanley860920@gmail.com  ·  github.com/Stanleyluuuu', 'color:#6B7280;font-size:11px;');
     console.log('%c Like what you see? Let\'s connect.', 'color:#6B7280;font-style:italic;font-size:11px;');
   }
