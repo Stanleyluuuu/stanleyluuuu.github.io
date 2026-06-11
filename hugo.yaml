@@ -110,11 +110,10 @@ params:
   about:
     enable: true
     title: "About Me"
-    image: "/assets/img/landing/avatar.jpg"
     content: |-
       I am an **AI Software Engineer II at Garmin Ltd.** (Nov 2023 – present, promoted Jun 2026), where I lead the development of an organization-wide computer vision platform scaling across **200+ active production services**.
 
-      I drive GenAI adoption from research to production — model evaluation, technical assessments, and **5 shipped use cases** — and am currently building an **internal agentic AI system** that orchestrates the company's AI services through LangGraph behind a conversational frontend. I also mentor interns on AI system design and oversee cross-functional AI infrastructure end-to-end.
+      I drive GenAI adoption from research to production: by platformizing model access, the GenAI API platform I administer now powers **30+ LLM/VLM use cases** across the company. On top of it, I am building an **internal agentic AI system** that orchestrates the platform's APIs through LangGraph behind a conversational frontend. I also mentor interns on AI system design and oversee cross-functional AI infrastructure end-to-end.
 
       Previously, I completed my **Master's in Electrical Engineering at NTHU**, conducting research in computer vision under Prof. Min Sun, which resulted in a publication at **ICRA 2021**.
     skills:
@@ -131,9 +130,8 @@ params:
         - "Kong API Gateway"
         - "Grafana"
         - "MySQL / MongoDB"
-        - "Git / CI/CD"
+        - "GitLab CI/CD"
         - "vLLM"
-        - "Scikit-Learn"
         - "C++ (CUDA/OpenMP/MPI)"
 
   # Experience Section
@@ -149,7 +147,8 @@ params:
               content: "Xindian, Taiwan"
             content: |
               - **Promoted to Engineer II** after 2.5 years of leading the organization's computer vision and GenAI platforms.
-              - **Building an internal agentic AI system**: a conversational assistant that uses Garmin's internal LLM API as its reasoning core and orchestrates the company's AI services — translation, ASR, TTS, YOLO, SAM3, OCR — as LangGraph tools, so users can complete tasks with text, images, or audio.
+              - **Raise the team's engineering bar** as a code reviewer for the AI team and a technical interviewer for engineering candidates.
+              - **Building an internal agentic AI system**: a conversational assistant that uses Garmin's internal LLM API as its reasoning core and orchestrates APIs from the GenAI platform I administer — spanning language, LLM, and CV categories — as LangGraph tools, so users can complete tasks with text, images, or audio.
           - name: "AI Software Engineer I"
             date: "Nov 2023 – Jun 2026"
             info:
@@ -198,7 +197,7 @@ params:
       - title: "Internal Agentic AI Assistant"
         content: |
           Lead Developer at Garmin (Jun 2026 – present).
-          Conversational agent built on LangGraph, with Garmin's internal LLM API as the reasoning core and the company's AI services — LLM translation, ASR, TTS, YOLO, SAM3, OCR — exposed as callable tools. Users drop text, images, or audio into a chat frontend, and the agent plans and chains the right tools to complete the task.
+          Conversational agent built on LangGraph, with Garmin's internal LLM API as the reasoning core. APIs from the internal GenAI platform I administer — spanning language, LLM, and CV categories — are exposed as callable tools: users drop text, images, or audio into a chat frontend, and the agent plans and chains the right tools to complete the task.
         badges:
           - "LangGraph"
           - "LLM Agents"
@@ -229,7 +228,7 @@ params:
       - title: "Enterprise VLM/LLM Research & API Governance"
         content: |
           AI Researcher & Platform Owner at Garmin (Apr 2024 – present).
-          Evaluate emerging models and inference frameworks (vLLM and peers) through structured POCs, turning results into technical assessments that drive company-wide model selection. Administer the internal GenAI API platform on Kong Gateway — API key lifecycle, access control, rate limiting — with usage observability via Grafana dashboards.
+          Evaluate emerging models and inference frameworks (vLLM and peers) through structured POCs, turning results into technical assessments that drive company-wide model selection. Administer the internal GenAI API platform on Kong Gateway — API key lifecycle, access control, rate limiting — with usage observability via Grafana dashboards. Platformizing model access has scaled adoption from the first 5 production use cases to **30+ LLM/VLM use cases** across the company, and now powers the agentic assistant above.
         badges:
           - "LLM"
           - "VLM"
