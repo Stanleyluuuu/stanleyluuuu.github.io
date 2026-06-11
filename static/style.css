@@ -310,29 +310,29 @@ body.dark #about .content p {
 
 #about ul li::before { content: none; }
 
-/* Core AI/ML skills (1–4): outline Apple blue */
-#about ul li:nth-child(-n+4) {
+/* Core AI/ML skills (1–5): outline Apple blue */
+#about ul li:nth-child(-n+5) {
   background-color: transparent;
   color: #0071E3;
   border-color: rgba(0, 113, 227, 0.35);
 }
 
-/* All other skills (5+): neutral outline — minimal, breathable */
-#about ul li:nth-child(n+5) {
+/* All other skills (6+): neutral outline — minimal, breathable */
+#about ul li:nth-child(n+6) {
   background-color: transparent;
   color: #6E6E73;
   border-color: rgba(0, 0, 0, 0.14);
 }
 
 /* AI/ML pills in dark: Apple blue */
-body.dark #about ul li:nth-child(-n+4) {
+body.dark #about ul li:nth-child(-n+5) {
   background-color: transparent;
   color: #0A84FF;
   border-color: rgba(10, 132, 255, 0.35);
 }
 
 /* All other pills in dark: neutral outline */
-body.dark #about ul li:nth-child(n+5) {
+body.dark #about ul li:nth-child(n+6) {
   background-color: transparent;
   color: #86868B;
   border-color: rgba(255, 255, 255, 0.12);
@@ -346,7 +346,7 @@ body.dark #about ul li:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.32);
 }
 
-body.dark #about ul li:nth-child(-n+4):hover {
+body.dark #about ul li:nth-child(-n+5):hover {
   background-color: rgba(10, 132, 255, 0.10);
   color: #0A84FF;
   border-color: rgba(10, 132, 255, 0.45);
@@ -361,7 +361,7 @@ body.dark #about ul li:nth-child(-n+4):hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-#about ul li:nth-child(-n+4):hover {
+#about ul li:nth-child(-n+5):hover {
   background-color: rgba(0, 113, 227, 0.06);
   color: #0071E3;
   border-color: rgba(0, 113, 227, 0.45);
@@ -402,7 +402,7 @@ body.dark #projects .card.project-card-noimg .card-title {
 
 body.dark #projects .card.project-card-noimg .card-text,
 body.dark #projects .card.project-card-noimg .card-text p {
-  color: #86868B !important;
+  color: #A1A1A6 !important;   /* ≥4.5:1 on #2C2C2E card surface */
 }
 
 #projects .card.project-card-noimg .card-title {
@@ -436,13 +436,13 @@ body.dark #projects .badge {
   color: #86868B !important;
 }
 
-/* ICRA 2021 research project (card 4) — crimson top border for academic distinction */
-#projects .row .col-lg-6:nth-child(4) .card.project-card-noimg {
+/* ICRA 2021 research project (card 5) — crimson top border for academic distinction */
+#projects .row .col-lg-6:nth-child(5) .card.project-card-noimg {
   border-top-color: #87240E !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.05) !important;
 }
 
-#projects .row .col-lg-6:nth-child(4) .card.project-card-noimg:hover {
+#projects .row .col-lg-6:nth-child(5) .card.project-card-noimg:hover {
   border-top-color: #6E1D0B !important;
   box-shadow:
     0 20px 48px rgba(0, 0, 0, 0.14),
@@ -450,17 +450,17 @@ body.dark #projects .badge {
     0 2px 8px rgba(135, 36, 14, 0.12) !important;
 }
 
-#projects .row .col-lg-6:nth-child(4) .badge {
+#projects .row .col-lg-6:nth-child(5) .badge {
   background-color: rgba(135, 36, 14, 0.09) !important;
   color: #87240E !important;
 }
 
-body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg {
+body.dark #projects .row .col-lg-6:nth-child(5) .card.project-card-noimg {
   border-top-color: #c0432a !important;
   box-shadow: 0 4px 16px rgba(192, 67, 42, 0.14) !important;
 }
 
-body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg:hover {
+body.dark #projects .row .col-lg-6:nth-child(5) .card.project-card-noimg:hover {
   box-shadow:
     0 0 0 1px rgba(192, 67, 42, 0.08),
     0 20px 48px rgba(0, 0, 0, 0.32),
@@ -468,7 +468,7 @@ body.dark #projects .row .col-lg-6:nth-child(4) .card.project-card-noimg:hover {
     0 2px 8px rgba(192, 67, 42, 0.14) !important;
 }
 
-body.dark #projects .row .col-lg-6:nth-child(4) .badge {
+body.dark #projects .row .col-lg-6:nth-child(5) .badge {
   background-color: rgba(192, 67, 42, 0.18) !important;
   color: #e07860 !important;
 }
@@ -805,7 +805,7 @@ header .navbar-nav .nav-link:hover::after {
 
 /* Social icon hover: scale + reveal */
 #hero a.btn.social-icon {
-  color: #C7C7CC !important;
+  color: #8E8E93 !important;   /* ≥3:1 on light hero bg */
   transition:
     transform 0.2s cubic-bezier(0.25, 1, 0.5, 1),
     color 0.2s ease,
@@ -819,7 +819,7 @@ header .navbar-nav .nav-link:hover::after {
 }
 
 body.dark #hero a.btn.social-icon {
-  color: #636366 !important;
+  color: #98989D !important;   /* ≥3:1 on dark hero bg */
 }
 
 body.dark #hero a.btn.social-icon:hover {

@@ -112,9 +112,9 @@ params:
     title: "About Me"
     image: "/assets/img/landing/avatar.jpg"
     content: |-
-      I am an **AI Software Engineer at Garmin Ltd.** (Nov 2023 – present), where I lead the development of an organization-wide computer vision platform scaling across **200+ active production services**.
+      I am an **AI Software Engineer II at Garmin Ltd.** (Nov 2023 – present, promoted Jun 2026), where I lead the development of an organization-wide computer vision platform scaling across **200+ active production services**.
 
-      I lead GenAI adoption by evaluating **10+ LLM/VLM models** through structured proof-of-concepts, producing internal technical assessments that guide company-wide model selection and shipping **5 use cases into production**. I also mentor interns on AI system design and oversee cross-functional AI infrastructure end-to-end.
+      I drive GenAI adoption from research to production — model evaluation, technical assessments, and **5 shipped use cases** — and am currently building an **internal agentic AI system** that orchestrates the company's AI services through LangGraph behind a conversational frontend. I also mentor interns on AI system design and oversee cross-functional AI infrastructure end-to-end.
 
       Previously, I completed my **Master's in Electrical Engineering at NTHU**, conducting research in computer vision under Prof. Min Sun, which resulted in a publication at **ICRA 2021**.
     skills:
@@ -125,6 +125,7 @@ params:
         - "PyTorch / OpenCV"
         - "Computer Vision"
         - "LLM / VLM"
+        - "LangGraph / Agents"
         - "Docker / Kubernetes"
         - "Apache Kafka"
         - "Kong API Gateway"
@@ -142,8 +143,15 @@ params:
       - company: "Garmin Ltd."
         companyUrl: "https://www.garmin.com"
         jobs:
-          - name: "AI Software Engineer"
-            date: "Nov 2023 – present"
+          - name: "AI Software Engineer II"
+            date: "Jun 2026 – present"
+            info:
+              content: "Xindian, Taiwan"
+            content: |
+              - **Promoted to Engineer II** after 2.5 years of leading the organization's computer vision and GenAI platforms.
+              - **Building an internal agentic AI system**: a conversational assistant that uses Garmin's internal LLM API as its reasoning core and orchestrates the company's AI services — translation, ASR, TTS, YOLO, SAM3, OCR — as LangGraph tools, so users can complete tasks with text, images, or audio.
+          - name: "AI Software Engineer I"
+            date: "Nov 2023 – Jun 2026"
             info:
               content: "Xindian, Taiwan"
             content: |
@@ -187,10 +195,20 @@ params:
   projects:
     enable: true
     items:
+      - title: "Internal Agentic AI Assistant"
+        content: |
+          Lead Developer at Garmin (Jun 2026 – present).
+          Conversational agent built on LangGraph, with Garmin's internal LLM API as the reasoning core and the company's AI services — LLM translation, ASR, TTS, YOLO, SAM3, OCR — exposed as callable tools. Users drop text, images, or audio into a chat frontend, and the agent plans and chains the right tools to complete the task.
+        badges:
+          - "LangGraph"
+          - "LLM Agents"
+          - "Python"
+          - "Multimodal"
+
       - title: "Scalable AI Surveillance & Analytics Platform"
         content: |
           Lead Developer & PM at Garmin (Nov 2023 – present).
-          Centralized CV platform ingesting live camera streams across **200+ active services**, automating monitoring of physical facility operations. Built a real-time anomaly detection pipeline publishing alerts via Apache Kafka.
+          Centralized platform running **200+ camera-stream CV inference services** that automate monitoring of physical facility operations. Owns the pipeline end-to-end — stream ingestion, model inference, and real-time anomaly alerts published via Apache Kafka — with detection results persisted to MySQL/MongoDB for analytics.
         badges:
           - "Python"
           - "Computer Vision"
@@ -201,7 +219,7 @@ params:
       - title: "AI-Powered Document Inspection System"
         content: |
           Sole Developer & PM at Garmin (Mar 2024 – present).
-          Automated document verification pipeline combining OCR and computer vision image comparison, **reducing manual inspection time by 90%** while improving defect detection accuracy. Designed a human-in-the-loop review process that filters low-risk documents so operators focus only on flagged anomalies.
+          Automated document verification combining OCR with CV-based image comparison, **cutting manual inspection time by 90%** while improving defect detection accuracy. The key design choice: a human-in-the-loop flow that auto-clears low-risk documents, so operators review only flagged anomalies instead of every page.
         badges:
           - "Python"
           - "OCR"
@@ -211,7 +229,7 @@ params:
       - title: "Enterprise VLM/LLM Research & API Governance"
         content: |
           AI Researcher & Platform Owner at Garmin (Apr 2024 – present).
-          Continuously evaluate emerging models and open-source inference frameworks through structured POCs, producing internal technical assessments to guide company-wide adoption. Identified and validated high-value internal use cases for Vision-Language Models, bridging research and enterprise deployment. Administered the internal GenAI API platform via Kong Gateway — managing API key lifecycle, access control, and rate-limiting — and established platform observability through Grafana dashboards.
+          Evaluate emerging models and inference frameworks (vLLM and peers) through structured POCs, turning results into technical assessments that drive company-wide model selection. Administer the internal GenAI API platform on Kong Gateway — API key lifecycle, access control, rate limiting — with usage observability via Grafana dashboards.
         badges:
           - "LLM"
           - "VLM"
