@@ -84,6 +84,16 @@ params:
     content: |-
       AI Software Engineer at Garmin Ltd., building the company's GenAI platform and real-time computer vision systems.
       I serve and evaluate LLMs/VLMs, build tool-calling AI agents, and ship AI from research into production.
+    # Key metrics band rendered below the hero (layouts/partials/sections/hero/index.html)
+    metrics:
+      - value: "2M+"
+        label: "requests / week"
+      - value: "63M+"
+        label: "events / month"
+      - value: "5"
+        label: "production sites"
+      - value: "ICRA 2021"
+        label: "publication"
     image: /assets/img/landing/avatar.jpg
     roundImage: true
     bottomImage:
@@ -147,15 +157,16 @@ params:
               content: "Xindian, Taiwan"
             content: |
               - **Promoted to Engineer II** after 2.5 years owning the organization's GenAI and computer vision platforms.
-              - **Raise the team's engineering bar** as a code reviewer for the AI team and a technical interviewer for **1+ year**, contributing to **2 full-time hires**.
               - **Building a multimodal tool-calling AI agent** on LangGraph and an internally hosted LLM that orchestrates multi-step workflows — detection, OCR, TTS/ASR — from natural language prompts.
+              - **Continuing to raise the team's engineering bar** as a code reviewer and technical interviewer, and mentoring engineers on production AI system design.
           - name: "AI Software Engineer I"
             date: "Nov 2023 – Jun 2026"
             info:
               content: "Xindian, Taiwan"
             content: |
+              - **Built and scaled the enterprise GenAI platform** — LLM/VLM serving on vLLM, an automated evaluation framework, and a Kong API gateway — serving **30+ use cases across 8 teams** and **2M+ requests/week**.
               - **Led company-wide GenAI adoption** by evaluating **10+ LLMs/VLMs** through structured POCs against internal benchmarks, producing technical assessments that guided strategic model selection and shipped **5 core production use cases**.
-              - **Built and scaled the enterprise GenAI platform** — LLM/VLM serving on vLLM, an automated evaluation framework, and a Kong API gateway — now serving **30+ use cases across 8 teams** and **2M+ requests/week**.
+              - **Served as a code reviewer** for the AI team and a technical interviewer for **1+ year** while still at this level, contributing to **2 full-time hires**.
               - **Mentored engineering interns** on AI system design and production deployment, guiding them to independently ship production-grade services.
 
   # Education Section
@@ -197,7 +208,7 @@ params:
       - title: "Multimodal Tool-calling AI Agent"
         content: |
           End-to-end Owner at Garmin (May 2026 – present).
-          Stateful tool-calling agent built on LangGraph with an internally hosted LLM as its reasoning core. It orchestrates multi-step workflows — object detection, OCR, and TTS/ASR — from natural language prompts. The reliability work is in the design: structured tool schemas and deterministic error-recovery graphs that keep the agent dependable across long, multi-step tasks.
+          Building a stateful tool-calling agent on LangGraph with an internally hosted LLM as its reasoning core, orchestrating multi-step workflows — object detection, OCR, and TTS/ASR — from natural language prompts. Designing structured tool schemas and deterministic error-recovery graphs to keep the agent dependable across long, multi-step tasks.
         badges:
           - "LangGraph"
           - "LangChain"
@@ -207,7 +218,7 @@ params:
       - title: "Real-time CV Surveillance & Analytics Platform"
         content: |
           End-to-end Owner & Maintainer at Garmin (Nov 2023 – present).
-          Enterprise computer vision pipeline running across **5 sites**, processing **63M+ telemetry events/month** through Apache Kafka and fusing detection, tracking, and pose estimation to deliver **~4,000 critical alerts/month**, with results persisted to MySQL/MongoDB for analytics. A major refactor **cut per-model GPU memory by 70%** (2 GB → 600 MB) and **tripled the models served per GPU** by deduplicating model instances across containers and adopting FP16 half-precision.
+          Built an enterprise computer vision pipeline that runs across **5 sites**, processing **63M+ telemetry events/month** through Apache Kafka and fusing detection, tracking, and pose estimation to deliver **~4,000 critical alerts/month**, with results persisted to MySQL/MongoDB for analytics. A major refactor **cut per-model GPU memory by 70%** (2 GB → 600 MB) and **tripled the models served per GPU** by deduplicating model instances across containers and adopting FP16 half-precision.
         badges:
           - "Python"
           - "Computer Vision"
@@ -219,7 +230,7 @@ params:
       - title: "AI-Powered Document Inspection System"
         content: |
           End-to-end Owner at Garmin (Mar 2024 – present).
-          Automated document-verification pipeline that combines rule-based parsing with VLM-based data extraction, **saving 5,300+ manual hours a year across 3 business units**. Replacing legacy OCR with robust VLM extraction resolved systemic text and barcode misinterpretation, enabling automated compliance validation across hundreds of pages per document.
+          Built an automated document-verification pipeline that combined rule-based parsing with VLM-based data extraction, **saving 5,300+ manual hours a year across 3 business units**. Replacing legacy OCR with robust VLM extraction resolved systemic text and barcode misinterpretation, enabling automated compliance validation across hundreds of pages per document.
         badges:
           - "Python"
           - "VLM"
@@ -230,7 +241,7 @@ params:
       - title: "Enterprise GenAI Platform — LLM/VLM Serving & Evaluation"
         content: |
           Platform Owner at Garmin (Apr 2024 – present).
-          Built the company's automated LLM/VLM evaluation framework (LLM-as-judge, Ragas) and tuned the serving stack — a 2nd-generation VLM **tripled inference speed (3×) with higher accuracy**. The platform runs on Kubernetes and scales to **30+ production use cases across 8 teams**, handling **2M+ requests/week**. I designed its API gateway layer on Kong across **16 APIs / 52 projects**, sustaining **~99.9% availability** with zero production outages, and built Grafana dashboards that surface anomalies — Kong has blocked **~4,000 unauthorized requests**. I also ship reusable tool-calling configs and skill packages that expose platform APIs to internal AI coding agents.
+          Built the company's automated LLM/VLM evaluation framework (LLM-as-judge, Ragas) and tuned the serving stack — a 2nd-generation VLM **tripled inference speed (3×) with higher accuracy**. The platform runs on Kubernetes and scales to **30+ production use cases across 8 teams**, handling **2M+ requests/week**. I designed its API gateway layer on Kong across **16 APIs / 52 projects**, sustaining **~99.9% availability** with zero production outages, and built Grafana dashboards that surfaced anomalies — Kong blocked **~4,000 unauthorized requests**. I also shipped reusable tool-calling configs and skill packages that expose platform APIs to internal AI coding agents.
         badges:
           - "vLLM"
           - "LLM / VLM"

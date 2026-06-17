@@ -1,0 +1,15 @@
+{{/*
+  Override of hugo-profile's footer copyright.
+  Low-key, personal version — drops the prominent "Made with ❤ Hugo Profile"
+  theme credit to reduce template recognizability (theme is MIT-licensed,
+  footer attribution not required). Keeps a subtle "Built with Hugo".
+*/}}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center site-footer-copy">
+            &copy; {{ now.Format "2006" }} {{ .Site.Title }}
+            <span class="footer-dot" aria-hidden="true">·</span>
+            Built with <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
+        </div>
+    </div>
+</div>

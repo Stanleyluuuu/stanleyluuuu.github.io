@@ -1,5 +1,6 @@
 /* ============================================================
    Custom Styles — stanleyluuuu.github.io
+   Type system: Geist (headings + body) + Geist Mono (code/tags)
    Fonts loaded via <link> in layouts/partials/head/extensions.html
    ============================================================ */
 
@@ -48,22 +49,24 @@ html {
   scroll-padding-top: 4.5rem;
 }
 
-/* --- Typography --- */
+/* --- Typography — unified Geist type system --- */
 body {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
   font-size: 1rem;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  letter-spacing: -0.011em;
   line-height: 1.75;
 }
 
 h1, h2, h3, h4, h5, h6,
 .navbar-brand {
-  font-family: 'Outfit', sans-serif;
-  letter-spacing: -0.03em;
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 code, pre, .tech-tag {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Geist Mono', ui-monospace, monospace;
 }
 
 /* --- Keyboard focus: accessible outline for all interactive elements --- */
@@ -80,9 +83,10 @@ textarea:focus-visible {
 
 /* --- Hero --- */
 #hero {
+  position: relative;
   min-height: 80vh !important;
   padding-top: 4rem !important;
-  padding-bottom: 2rem !important;
+  padding-bottom: 3rem !important;
 }
 
 #hero h1 {
@@ -104,7 +108,7 @@ body.dark #hero h1 {
 }
 
 #hero p {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Geist', system-ui, sans-serif;
   font-size: 1.05rem;
   line-height: 1.75;
   max-width: 560px;
@@ -235,9 +239,9 @@ section {
 /* Section headings — editorial weight, clear contrast over body copy */
 section > .container > h3,
 section h3.text-center {
-  font-size: clamp(1.6rem, 3.5vw, 2.2rem) !important;
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem) !important;
   font-weight: 700 !important;
-  letter-spacing: -0.03em !important;
+  letter-spacing: -0.022em !important;
   margin-bottom: 2.5rem !important;
   color: #1D1D1F !important;
 }
@@ -245,6 +249,18 @@ section h3.text-center {
 body.dark section > .container > h3,
 body.dark section h3.text-center {
   color: #F5F5F7 !important;
+}
+
+/* Short blue accent underline beneath each section title — crisper, less template-y */
+section > .container > h3::after,
+section h3.text-center::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 0.85rem auto 0;
+  border-radius: 2px;
+  background: var(--accent);
 }
 
 /* Section sub-headings: clear step down from h3 → h4/h5 */
@@ -406,7 +422,7 @@ body.dark #projects .card.project-card-noimg .card-text p {
 }
 
 #projects .card.project-card-noimg .card-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Geist', system-ui, sans-serif;
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: -0.02em;
@@ -567,7 +583,7 @@ body.dark #education .card {
   border-radius: 9999px;
   font-size: 0.78rem;
   font-weight: 500;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Geist Mono', ui-monospace, monospace;
   color: #0071E3;
   background: rgba(0, 113, 227, 0.06);
   text-decoration: none;
@@ -636,6 +652,26 @@ footer a[href*="linkedin"]:hover { color: #0A66C2 !important; }
 body.dark footer a[href*="github"]:hover   { color: #e6edf3 !important; }
 body.dark footer a[href*="linkedin"]:hover { color: #5B9BD5 !important; }
 
+/* Custom low-key copyright line (B-6) */
+.site-footer-copy {
+  font-size: 0.85rem;
+  color: #8E8E93;
+  letter-spacing: 0.01em;
+}
+.site-footer-copy a {
+  color: #6E6E73;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.site-footer-copy a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.footer-dot { margin: 0 0.5rem; opacity: 0.5; }
+body.dark .site-footer-copy   { color: #86868B; }
+body.dark .site-footer-copy a { color: #98989D; }
+
 /* ============================================================
    TECH TAGS — monospace pill with accent border
    ============================================================ */
@@ -683,6 +719,89 @@ body.dark #hero {
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
+/* --- Hero key-metrics band (B-1) --- */
+.hero-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.4rem 1.4rem;
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.hero-metric {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.hero-metric-value {
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  letter-spacing: -0.02em;
+  color: #1D1D1F;
+  font-feature-settings: "tnum" 1;
+}
+
+.hero-metric-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #8E8E93;
+}
+
+.hero-metric-sep {
+  color: rgba(0, 0, 0, 0.18);
+  font-weight: 700;
+  user-select: none;
+}
+
+body.dark .hero-metric-value { color: #F5F5F7; }
+body.dark .hero-metric-label { color: #86868B; }
+body.dark .hero-metric-sep   { color: rgba(255, 255, 255, 0.22); }
+
+/* --- Hero scroll indicator (B-1) — desktop only, bounces gently --- */
+.hero-scroll {
+  display: none;  /* shown ≥992px below */
+  position: absolute;
+  bottom: 1.6rem;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  color: #8E8E93;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  animation: hero-bounce 2.2s ease-in-out infinite;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-scroll:hover { color: #1D1D1F; }
+body.dark .hero-scroll        { color: #98989D; }
+body.dark .hero-scroll:hover  { color: #F5F5F7; }
+
+.hero-scroll-chevron {
+  display: block;
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+@keyframes hero-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(7px); }
+}
+
+@media (min-width: 992px) and (min-height: 640px) {
+  .hero-scroll { display: inline-flex; }
+}
+
 /* "Live" pulsing green dot on the first experience nav tab (current role) */
 #experience .nav-item:first-child .nav-link::before {
   content: '●';
@@ -707,7 +826,7 @@ body.dark #hero {
   transform: translateX(-50%) translateY(12px);
   background: #2C2C2E;
   color: #F5F5F7;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Geist', system-ui, sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
   padding: 10px 20px;
@@ -898,6 +1017,17 @@ a, button, [role="button"] {
   /* Reduce excessive top margin on hero buttons */
   #hero a.btn {
     margin-top: 28px !important;
+  }
+
+  /* Hero metrics band: tighter spacing so it wraps cleanly on phones */
+  .hero-metrics {
+    gap: 0.45rem 1rem;
+    margin-top: 2.25rem;
+    padding-top: 1.25rem;
+  }
+
+  .hero-metric-value {
+    font-size: 1.1rem;
   }
 
   /* Experience: scrollable tab row so tabs never wrap to a second line */
