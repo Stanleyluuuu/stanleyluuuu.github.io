@@ -732,36 +732,21 @@ body.dark #hero {
 }
 
 .hero-metric {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #6E6E73;
   white-space: nowrap;
 }
 
-.hero-metric-value {
-  font-weight: 700;
-  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
-  letter-spacing: -0.02em;
-  color: #1D1D1F;
-  font-feature-settings: "tnum" 1;
-}
-
-.hero-metric-label {
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #8E8E93;
-}
-
 .hero-metric-sep {
-  color: rgba(0, 0, 0, 0.18);
-  font-weight: 700;
+  color: rgba(0, 0, 0, 0.20);
+  font-weight: 600;
   user-select: none;
 }
 
-body.dark .hero-metric-value { color: #F5F5F7; }
-body.dark .hero-metric-label { color: #86868B; }
-body.dark .hero-metric-sep   { color: rgba(255, 255, 255, 0.22); }
+body.dark .hero-metric     { color: #98989D; }
+body.dark .hero-metric-sep { color: rgba(255, 255, 255, 0.24); }
 
 /* --- Hero scroll indicator (B-1) — desktop only, bounces gently --- */
 .hero-scroll {
@@ -1021,13 +1006,13 @@ a, button, [role="button"] {
 
   /* Hero metrics band: tighter spacing so it wraps cleanly on phones */
   .hero-metrics {
-    gap: 0.45rem 1rem;
+    gap: 0.4rem 0.85rem;
     margin-top: 2.25rem;
     padding-top: 1.25rem;
   }
 
-  .hero-metric-value {
-    font-size: 1.1rem;
+  .hero-metric {
+    font-size: 0.85rem;
   }
 
   /* Experience: scrollable tab row so tabs never wrap to a second line */

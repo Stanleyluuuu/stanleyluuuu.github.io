@@ -79,21 +79,19 @@ params:
   # Hero Section
   hero:
     enable: true
-    intro: "Hi, my name is"
+    intro: "Hi — I'm Kuan-Wei Lu, but call me"
     title: "Stanley."
     content: |-
       AI Software Engineer at Garmin Ltd., building the company's GenAI platform and real-time computer vision systems.
       I serve and evaluate LLMs/VLMs, build tool-calling AI agents, and ship AI from research into production.
-    # Key metrics band rendered below the hero (layouts/partials/sections/hero/index.html)
+    # Identity / capability labels shown in the hero band (single-level text).
+    # Operational numbers (2M+ req/week, 63M+ events/month, 5 sites, ICRA 2021)
+    # are not repeated here — they live in About / Projects / Education.
     metrics:
-      - value: "2M+"
-        label: "requests / week"
-      - value: "63M+"
-        label: "events / month"
-      - value: "5"
-        label: "production sites"
-      - value: "ICRA 2021"
-        label: "publication"
+      - "AI Software Engineer"
+      - "Garmin Ltd."
+      - "GenAI Platforms"
+      - "Real-time Computer Vision"
     image: /assets/img/landing/avatar.jpg
     roundImage: true
     bottomImage:

@@ -52,13 +52,10 @@
         </div>
 
         {{ with $hero.metrics }}
-        <div class="hero-metrics" aria-label="Key metrics">
+        <div class="hero-metrics" aria-label="Role and focus">
             {{ range $i, $m := . }}
             {{ if $i }}<span class="hero-metric-sep" aria-hidden="true">·</span>{{ end }}
-            <div class="hero-metric">
-                <span class="hero-metric-value">{{ $m.value }}</span>
-                <span class="hero-metric-label">{{ $m.label }}</span>
-            </div>
+            <span class="hero-metric">{{ $m }}</span>
             {{ end }}
         </div>
         {{ end }}
