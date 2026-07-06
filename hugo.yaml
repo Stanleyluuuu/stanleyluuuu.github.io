@@ -37,6 +37,9 @@ params:
   theme:
     defaultTheme: "light"
 
+  # NOTE: theme color params below are largely overridden by static/style.css
+  # (the custom design system). Keep them in sync with the CSS tokens — they
+  # still feed a few theme-internal styles (links, experience tabs).
   color:
     textColor: "#1D1D1F"
     secondaryTextColor: "#6E6E73"
@@ -84,14 +87,14 @@ params:
     content: |-
       AI Software Engineer at Garmin Ltd., building the company's GenAI platform and real-time computer vision systems.
       I serve and evaluate LLMs/VLMs, build tool-calling AI agents, and ship AI from research into production.
-    # Identity / capability labels shown in the hero band (single-level text).
-    # Operational numbers (2M+ req/week, 63M+ events/month, 5 sites, ICRA 2021)
-    # are not repeated here — they live in About / Projects / Education.
+    # Impact numbers shown in the hero band — the 10-second scan for
+    # engineering managers. Identity (role, company) already lives in the
+    # hero copy above; full context lives in About / Projects.
     metrics:
-      - "AI Software Engineer"
-      - "Garmin Ltd."
-      - "GenAI Platforms"
-      - "Real-time Computer Vision"
+      - "2M+ requests/week"
+      - "63M+ events/month"
+      - "99.9% availability"
+      - "30+ production use cases"
     image: /assets/img/landing/avatar.jpg
     roundImage: true
     bottomImage:
@@ -203,15 +206,17 @@ params:
   projects:
     enable: true
     items:
-      - title: "Multimodal Tool-calling AI Agent"
+      - title: "Enterprise GenAI Platform — LLM/VLM Serving & Evaluation"
         content: |
-          End-to-end Owner at Garmin (May 2026 – present).
-          Building a stateful tool-calling agent on LangGraph with an internally hosted LLM as its reasoning core, orchestrating multi-step workflows — object detection, OCR, and TTS/ASR — from natural language prompts. Designing structured tool schemas and deterministic error-recovery graphs to keep the agent dependable across long, multi-step tasks.
+          Platform Owner at Garmin (Apr 2024 – present).
+          Built the company's automated LLM/VLM evaluation framework (LLM-as-judge, Ragas) and tuned the serving stack — a 2nd-generation VLM **tripled inference speed (3×) with higher accuracy**. The platform runs on Kubernetes and scales to **30+ production use cases across 8 teams**, handling **2M+ requests/week**. I designed its API gateway layer on Kong across **16 APIs / 52 projects**, sustaining **~99.9% availability** with zero production outages, and built Grafana dashboards that surfaced anomalies — Kong blocked **~4,000 unauthorized requests**. I also shipped reusable tool-calling configs and skill packages that expose platform APIs to internal AI coding agents.
         badges:
-          - "LangGraph"
-          - "LangChain"
-          - "LLM Agents"
-          - "Multimodal"
+          - "vLLM"
+          - "LLM / VLM"
+          - "Ragas"
+          - "Kubernetes"
+          - "Kong Gateway"
+          - "Grafana"
 
       - title: "Real-time CV Surveillance & Analytics Platform"
         content: |
@@ -236,17 +241,15 @@ params:
           - "Computer Vision"
           - "Automation"
 
-      - title: "Enterprise GenAI Platform — LLM/VLM Serving & Evaluation"
+      - title: "Multimodal Tool-calling AI Agent"
         content: |
-          Platform Owner at Garmin (Apr 2024 – present).
-          Built the company's automated LLM/VLM evaluation framework (LLM-as-judge, Ragas) and tuned the serving stack — a 2nd-generation VLM **tripled inference speed (3×) with higher accuracy**. The platform runs on Kubernetes and scales to **30+ production use cases across 8 teams**, handling **2M+ requests/week**. I designed its API gateway layer on Kong across **16 APIs / 52 projects**, sustaining **~99.9% availability** with zero production outages, and built Grafana dashboards that surfaced anomalies — Kong blocked **~4,000 unauthorized requests**. I also shipped reusable tool-calling configs and skill packages that expose platform APIs to internal AI coding agents.
+          End-to-end Owner at Garmin (May 2026 – present).
+          Building a stateful tool-calling agent on LangGraph with an internally hosted LLM as its reasoning core, orchestrating multi-step workflows — object detection, OCR, and TTS/ASR — from natural language prompts. Designing structured tool schemas and deterministic error-recovery graphs to keep the agent dependable across long, multi-step tasks.
         badges:
-          - "vLLM"
-          - "LLM / VLM"
-          - "Ragas"
-          - "Kubernetes"
-          - "Kong Gateway"
-          - "Grafana"
+          - "LangGraph"
+          - "LangChain"
+          - "LLM Agents"
+          - "Multimodal"
 
       - title: "Robust 360-8PA (ICRA 2021)"
         content: |

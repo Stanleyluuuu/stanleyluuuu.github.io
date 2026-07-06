@@ -6,7 +6,7 @@
 
 /* ============================================================
    CSS CUSTOM PROPERTIES — colour system
-   Palette: Warm Beige · Steel Blue · Gold · Crimson · Near-Black
+   Palette: Apple-style — blue accent · gray surfaces · crimson (ICRA only)
    ============================================================ */
 :root {
   --bg-base:    #F2F2F7;   /* slightly deeper — creates contrast with white cards */
@@ -15,7 +15,6 @@
 
   --border-subtle:  rgba(0, 0, 0, 0.06);
   --border-default: rgba(0, 0, 0, 0.10);
-  --border-accent:  rgba(0, 113, 227, 0.40);
 
   --accent:       #0071E3;
   --accent-light: #2997FF;
@@ -33,7 +32,6 @@ body.dark {
 
   --border-subtle:  rgba(255, 255, 255, 0.07);
   --border-default: rgba(255, 255, 255, 0.10);
-  --border-accent:  rgba(10, 132, 255, 0.30);
 
   --accent:       #0A84FF;
   --accent-light: #2997FF;
@@ -65,7 +63,7 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: -0.025em;
 }
 
-code, pre, .tech-tag {
+code, pre {
   font-family: 'Geist Mono', ui-monospace, monospace;
 }
 
@@ -224,7 +222,7 @@ body.dark header nav {
 #education  { background-color: var(--bg-base)   !important; }
 #contact    { background-color: var(--bg-raised) !important; }
 
-/* Dark mode: --bg-raised resolves to #1c2333, --bg-base to #0d1117 — handled by tokens above */
+/* Dark mode: --bg-raised resolves to #1D1D1F, --bg-base to #161617 — handled by tokens above */
 
 /* ============================================================
    SECTION SPACING & HEADING HIERARCHY
@@ -673,39 +671,6 @@ body.dark .site-footer-copy   { color: #86868B; }
 body.dark .site-footer-copy a { color: #98989D; }
 
 /* ============================================================
-   TECH TAGS — monospace pill with accent border
-   ============================================================ */
-.tech-tag {
-  background: transparent !important;
-  border: 1px solid rgba(108, 122, 143, 0.22) !important;
-  color: #6C7A8F !important;
-  border-radius: 980px !important;
-  padding: 0.2rem 0.7rem !important;
-  font-size: 0.75rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.03em;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
-}
-
-body.dark .tech-tag {
-  background: transparent !important;
-  border-color: rgba(155, 168, 188, 0.22) !important;
-  color: #7A8A9E !important;
-}
-
-.tech-tag:hover {
-  background: rgba(108, 122, 143, 0.06) !important;
-  border-color: rgba(108, 122, 143, 0.40) !important;
-  color: #4A5568 !important;
-}
-
-body.dark .tech-tag:hover {
-  background: rgba(155, 168, 188, 0.10) !important;
-  border-color: rgba(155, 168, 188, 0.40) !important;
-  color: #9BB0C8 !important;
-}
-
-/* ============================================================
    DELIGHT
    ============================================================ */
 
@@ -733,9 +698,10 @@ body.dark #hero {
 
 .hero-metric {
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.01em;
-  color: #6E6E73;
+  color: #48484A;
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
@@ -745,10 +711,10 @@ body.dark #hero {
   user-select: none;
 }
 
-body.dark .hero-metric     { color: #98989D; }
+body.dark .hero-metric     { color: #C7C7CC; }
 body.dark .hero-metric-sep { color: rgba(255, 255, 255, 0.24); }
 
-/* --- Hero scroll indicator (B-1) — desktop only, bounces gently --- */
+/* --- Hero scroll indicator (B-1) — desktop only, static (earned motion) --- */
 .hero-scroll {
   display: none;  /* shown ≥992px below */
   position: absolute;
@@ -761,7 +727,6 @@ body.dark .hero-metric-sep { color: rgba(255, 255, 255, 0.24); }
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  animation: hero-bounce 2.2s ease-in-out infinite;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
@@ -778,9 +743,10 @@ body.dark .hero-scroll:hover  { color: #F5F5F7; }
   transform: rotate(45deg);
 }
 
-@keyframes hero-bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%      { transform: translateX(-50%) translateY(7px); }
+/* Nudge down on hover — motion only in response to intent */
+.hero-scroll:hover .hero-scroll-chevron {
+  transform: rotate(45deg) translate(3px, 3px);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (min-width: 992px) and (min-height: 640px) {
@@ -865,22 +831,14 @@ body.dark .hero-scroll:hover  { color: #F5F5F7; }
   transform: translateY(0);
 }
 
-/* Hero image: fade-in + float loop */
+/* Hero image: one-shot fade-in — no idle loop (earned motion) */
 @keyframes fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-@keyframes avatar-float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
-}
-
 #hero .image.animate img {
-  will-change: transform;
-  animation:
-    fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    avatar-float 4s 0.9s ease-in-out infinite;
+  animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Navbar link underline slide */

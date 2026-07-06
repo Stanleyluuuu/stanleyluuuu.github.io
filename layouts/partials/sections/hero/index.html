@@ -17,9 +17,11 @@
                 <h1>
                     {{ $hero.title }}
                 </h1>
+                {{ with $hero.subtitle }}
                 <h2>
-                    {{ $hero.subtitle }}
+                    {{ . }}
                 </h2>
+                {{ end }}
                 <p class="hero-content">
                     {{ $hero.content | markdownify }}
                 </p>
